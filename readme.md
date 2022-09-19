@@ -3,476 +3,426 @@
 
 ## Week 1: Basics, Console projects
 
-### Lesson 1
+### Lesson 1 Intro
 
 #### Aim
 
-    1. Introduce myself, the course, get to know each other, our backgrounds and experiences, explain
-    the Lithuanian market for .NET developers.
-    2. Explain the structure of the course.
-    3. Install Visual Studio 2019, get familiar with the development environment, create a new project.
-    4. Get familiar with debugging technique.
+    1. Introduce myself, my experience etc.
+    2. Explain the structure of the course. The aim of this course. Emphasis on teamwork.
+    3. Accelerated start to get you to able to work in a team.
+    4. Working in a scrum. Jira.
+    5. Install Visual Studio 2022, get familiar with the development environment, Project Types.
+    6. C# Basics -> Strings, Console Input, Output, Numbers, Parsing, Basic branching.
 
-#### Homework/Project
-
-    Main: Hello World in Visual Studio.
-    Extra: Enter your name or surname in Console window and print out a full sentence.
-    Extra: Enter your date of birth and produce age.
-    Extra: Console Calculator.
-    
-#### Links
-
-    Visual Studio 2019 - https://visualstudio.microsoft.com/vs/
-    Hello World program - https://en.wikipedia.org/wiki/%22Hello,_World!%22_program
-    Developer salaries - https://docs.google.com/presentation/d/1keUGzMCqV3oedd2x9sPMTa3x2TP9iLDNWWy2OHqxF-c/
-
-### Lesson 2
+### Lesson 2 Basic c# programming
 
 #### Aim
 
-    1. Get familiar with Object-oriented programming (OOP).
-    2. Get familiar with basic programming concepts in .NET: arrays, lists, loops, if statements, operators and etc.
+    1. Get familiar with.
+    2. Get familiar with basic programming concepts in .NET: Methods, Parameters, output, arrays, lists, loops statements, operators and etc.
 
 #### Homework/Project
 
     Main: Console Shop Project.
-    Extra: Upload it to GitHub.
-   
-#### Links
 
-    Console Project Tutorial - https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019
-    GitHub 101 - https://guides.github.com/
-
-### Lesson 3
+### Lesson 3 OOP
 
 #### Aim
 
-    1. Continue learning C# programming, inheritance, encapsulation, abstraction and etc.
-    2. Introduce NuGet packages library.
+    1. Introducing Object Oriented programming into C#: Classes, Objects, properties, constructors, functions.
+    2. Emphasis on encapsulation and abstraction, splitting functionality into different classes (services).
+    3. Continue learning C# programming, inheritance, encapsulation, abstraction and etc.
 
 #### Homework/Project
 
-    Main: Job advertisement scraper.
-    Extra:
-    
-#### Links
-    
-    NuGet 101 - https://docs.microsoft.com/en-us/nuget/what-is-nuget
-    Web scraping - https://en.wikipedia.org/wiki/Web_scraping
-    Web scraping in c# - https://www.scrapingbee.com/blog/web-scraping-csharp/#making-an-http-request-to-a-web-page-in-c
-    ScrapySharp - https://github.com/rflechner/ScrapySharp
+    Main: Console Shop Project.
 
-### Lesson 4
+### Lesson 4 Lists, Objects, LINQ, JSON, Writing files
 
 #### Aim
 
-    1. More Object oriented programming working with Generics and Inheritance.
-    2. Introduce to Json.
-    3. Learning how to work with Files.
-
-#### Lesson 5
-
-#### Aim
-
-    1. Revision/ Project work
-
-## Week 2: MVC + Razor, API technologies.
-
-### Lesson 1
-
-#### Aim
-
-    1. Introduce MVC design pattern and Razor.
-    2. Explain Project folder structure.
-    3. Introduce sending data to the controllers.
-    4. Explain Routing concept in MVC.
+   1. Arrays/Lists manipulation.
+   2. Creating, Adding, Removing Lists of Objects.
+   3. LINQ -> Filtering (Where), Select, ForEach.
+   4. JSON Notation
+   5. Writing Reading from Files.
 
 #### Homework/Project
 
-    Main: Registration form application.
-    Extra: Back-end validation and attributes.
-    
-#### Links
+    Main: Console Shop Project continued -> Save State to json file, write load from it. 
 
-    Razor - https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-3.1&tabs=visual-studio
-    MVC Pattern - https://dotnet.microsoft.com/apps/aspnet/mvc
-
-### Lesson 2
+### Lesson 5 GIT
 
 #### Aim
 
-    1. Introduce Razor engine limitations and explain why JavaScript is needed.
-    2. Enriching Razor with JavaScript.
+    1. Github
+    2. Git 
+    3. Github Desktop Client
+    4. GIT CLI
+    5. Staging, Commit, Push, Remote, Branching, Pull-requests, Conflicts.
+    6. .gitignore
+    7. Git Flow.
+
+## Week 2: Databases, API
+
+### Lesson 1 POSTGRE
+
+#### Aim
+
+    1. Relational Databases -> Postgre
+    2. Installing Postgre.
+    3. Installing pgAdmin
+    4. SQL for tables, columns, data.
+    5. Primary Keys, Foreign Keys, Indexes
+    6. Relationships One to One, One to Many, Many to Many.
 
 #### Homework/Project
 
-    Main: Registration form upgrade. Make it a Single-page application (SPA).
-    Extra:
-    
-#### Links
+   Create a database schema for a shop. Populate it with data.
 
-    Razor - https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-3.1&tabs=visual-studio
-
-### Lesson 3
+### Lesson 2 C# with Postgre
 
 #### Aim
 
-    1. Introduce WebAPI and differences from MVC.
+   1. Nugets.
+   2. SQLConnection
+   3. The trouble mapping sql to c# objects.
+   4. Dapper.
+   5. Repository.
+
+#### Homework/Project
+
+    Main: Shop should use database instead of Json
+
+### Lesson 3 API
+
+#### Aim
+
+    1. Introduce WebAPI, MVC.
     2. Explain REST API software architecture.
     3. Sending parameters (FromBody vs FromUrl).
-    4. Test it via HttpGet, HttpPost, HttpDelete, using Postman.
+    4. Test it via HttpGet, HttpPost, HttpDelete using Swagger.
+    5. Swagger
+    6. CRUD.
 
 #### Homework/Project
 
-    Main: 'Minima' shop Warehouse RESTful API system for three items: bread, milk and cake.
-    Extra: 3 items should reuse the same code, generic controllers, repository.
-    Extra: Add Swagger to API.
-    
+    Main: CRUD api for Product warehouse.
+
 #### Links
 
     What is an API? - https://www.youtube.com/watch?v=s7wmiS2mSXY&ab_channel=MuleSoftVideos
     REST API - https://www.restapitutorial.com/
 
-### Lesson 4
+### Lesson 4 API architecture
 
 #### Aim
 
-    1. Get familiar with REST API documentation
-    2. Swagger
-    3. Postman
-
-### Lesson 5
-
-#### Aim 
-
-    Revision Project Work
-
-## Week 3: Databases
-
-### Lesson 1
-
-#### Aim
-
-    1. Create a database on your local machine, setup MS SQL.
-    2. Create schemas, tables, test data.
-    3. SQL statements: SELECT, UPDATE, INSERT, DELETE. 
-    4. SqlConnecion with .NET Core.
+    1. Controllers
+    2. Services
+    3. Repositories
+    4. Static Helper classes.
+    5. Extension methods
+    6. Dtos
+    7. Entities
+    8. DbDeploy/dbup
 
 #### Homework/Project
 
-    Main: Introduce customer object in 'Minima' application.
-    Upgrade existing application to be able to filter by the customer.
-    Extra: Upgrade the database with millions of records and observe the performance. 
-    
-#### Links
+    Main: Apply best practices for Product warehouse.
 
-    SQL basics - https://www.dataquest.io/blog/sql-basics/
+### Day 5
 
-### Lesson 2
+    1. UML
+    2. How to work in teams
+    3. Dividing into tasks.
+    4. Agile programming 
+    5. Pull-requests and Conflicts reminder
 
-#### Aim
+## Week 3 for Hosting/Adform specifics
 
-    1. Introduce Foreign Keys, Indexes.
-    2. Explain Stored procedures, functions.
-    3. Explain SQL clauses: Joins, Group By, Aliases.
-    4. Introducing Dapper in .NET.
+### Day 1 CI/CD
 
-#### Homework/Project
+    1. CI/CD
+    2. Github Actions
+    3. Yml files/templates
 
-    Main: Focus on One-to-One, One to Many, Many to Many
-    Extra:
-    
-#### Links
-    
-    SQL Join - https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
-    Dependency Injection (DI) - https://stackoverflow.com/questions/130794/what-is-dependency-injection
+### Day 2 Docker Kubernetes intro
 
-### Lesson 3
+    1. Virtual machines
+    2. Docker.
+    3. Kubernetes
 
-#### Aim
+### Day 3 Hosting (Adform)
 
-    1. Introduce Entity Framework Core, its benefits over plain SQL.
-    2. Get familiar with DbSets, Linq.
+    1. Scrum by Adform
+    2. Hosting and other details of Adform
 
-#### Homework/Project
+### Day 4 Logging and Monitoring in SCRUM (Adform)
 
-    Main: Upgrade 'Minima' to use EF Core and Linq instead of SqlConnection.
-    Extra: Research IEnumerable vs IQueryable and apply proper usage.
-    
-#### Links
+    1. Need for logging and monitoring
+    2. Grafana
+    3. Kibana
 
-    EF Core - https://docs.microsoft.com/en-us/ef/core/
-    LINQ - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
+### Day 5 Vault and other missed details (Adform)
 
-### Lesson 4
+    1. Vault
+    2. Other detais
 
-#### Aim
+## Week 4 The Good Practices
 
-    1. EF core advanced.
-    2. Relationships: one to many, one to many, many to many.
-    3. Loading related entities.
+### Day 1 Asynchronous programming and HttpClient
 
-### Lesson 5
- 
-#### Aim
+    1. Async/Await
+    2. Task.Await
+    3. System Integration
+    4. HttpClient
+    5. https://jsonplaceholder.typicode.com/
+    6. Parsing response.
+    7. Sending Body
 
-  Revision/ project work
+### Day 2 Automapper, Generics
 
+    1. Dont expose Entities
+    2. Dtos
+    3. AutoMapper
+    4. Inheritance
+    5. Generics
 
-## Week 4: Code-reusability, Architecture and Design patterns
+### Day 3 Validation and configurations
 
-### Lesson 1
+    1. Attributes
+    2. ModelState
+    3. FluentValidation
+    4. Services vs StaticHelpers vs Extensions
+    5. Appsettings/Configurations.
 
-#### Aim
+### Day 4 Exceptions StatusCodes
 
-    1. Clean code structure.
-    2. Introduce an interface and its power through Dependency Injection (DI).
-    3. Repository and Service coding patterns.
+    1. Exception handling
+    2. Custom Exceptions
+    3. Status Codes.
 
-#### Homework/Project
+### Day 5 REST API delicacies
 
-    Main: Upgrade existing 'Minima' project to employ Customer and Product service, inject them as services.
-    Refactor database access to use Repositories (Generic repositories + Unit of work).
-    Extra:
+    1. REST API documentation
+    2. Swagger documentation attributes.
+    3. Semantic versioning, contract changes.
+    4. Is Api Restful?
 
-#### Links
+## Week 4 Automated Tests
 
-    Domain-Driven design (DDD) - https://en.wikipedia.org/wiki/Domain-driven_design
-    Dependency Injection (DI) - https://stackoverflow.com/questions/130794/what-is-dependency-injection
-
-### Lesson 2
-
-#### Aim
-
-    1. Dividing models into Entities and Data Transfer Objects (DTOs).
-    2. Configure and employ AutoMapper.
-    3. Exception handling.
-
-#### Homework/Project
-
-    Main: Employ the principles above to the current project.
-    Extra:
-    
-#### Links
-    
-    AutoMapper - https://automapper.org/
-    Exception handling - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/exception-handling
-
-### Lesson 3
+### Lesson 1 Xunit
 
 #### Aim
 
-    1. Introduction to Asynchronous Programming: Async/Await.
-    2. Extension methods, Helper classes. When to use static classes.
-    3. Shared project, common packages patterns.
+    1. Nunit
+    1. InlineData
+    2. Task.Assert vs FluentAssertions
+    3. Archictecture for tests.
 
-#### Homework/Project
+### Lesson 2 Mocks
 
-    Main: Employ the principles above to the current project.
-    Extra:
+    1. Dependency Inversion Principles.
+    2. Interfaces
+    3. Mocks
+    4. Moq
+    5. Code Coverage
 
-#### Links
+### Lesson 3 Integration Tests
 
-    Asynchronous Programming - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+    1. Integration Tests
+    2. WebApplicationFactory
+    3. CustomWebApplicationFactory
+    4. InMemoryDatabase vs RealDatabase
+    5. Real Database issues.
+    6. Db with Docker
 
-### Lesson 4
+### Lesson 4 WireMock, Autofixture
 
-#### Aim
+    1. External Apis,
+    2. Adapter Pattern
+    3. WireMock.
+    4. Autofixture.
 
-    1. Dividing solution into several projects.
-    2. Clean Code
-    3. SOLID
+### Lesson 5 Bdd Specflow
 
-### Lesson 5
+    1. Bdd
+    2. Specflow
+    3. TDD
 
-#### Aim
+## Week 5 Devops
 
-    Revision/Project work
+### Lesson 1 CI/CD
 
-## Week 5: Automated testing, Test-driven development (TDD)
+    1. CI/CD
+    2. Github Actions
+    3. Yml files.
+    4. Build, run tests in pipelines
+    5. SonarQube.
 
-### Lesson 1
+### Lesson 2 Docker
 
-#### Aim
+    1. Virtual machines
+    2. Install Docker
+    3. Docker run Postgre
+    4. Docker Images/Containers
 
-    1. Introduction to Test-driven development (TDD).
-    2. Understanding Unit tests.
-    3. XUnit testing framework, Facts/Theories.
-    4. Architecture for testing frameworks.
+### Lesson 3 Docker-compose
 
-#### Homework/Project
+    1. Building images.
+    2. Pushing registry
+    3. Creating Container
+    4. Docker-compose
 
-    Main: Adding unit tests for existing projects.
-    Extra:
-    
-#### Links
-    
-    Unit testing - https://softwaretestingfundamentals.com/unit-testing/
-    Test-driven development - https://en.wikipedia.org/wiki/Test-driven_development
-
-### Lesson 2
-
-#### Aim
-
-    1. Integration testing.
-    2. Mocking services with Moq.
-    3. Replacing Database with In-Memory Database for testing.
-
-#### Homework/Project
-
-    Main: Adding Integration tests to current projects.
-    Extra:
-    
-#### Links
-    
-    Integration testing - https://softwaretestingfundamentals.com/integration-testing/
-    In-Memory Database - https://docs.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli
-
-### Lesson 3
-
-#### Aim
-
-    1. BDD + Specflow
-    2. WireMock.
-
-#### Homework/Project
-
-    Extra: GildedRose refactoring Kata
-  
-#### Links
-
-    GildedRose Kata - https://github.com/emilybache/GildedRose-Refactoring-Kata
-    Refactoring Katas - https://kata-log.rocks/refactoring
-
-### Lesson 4
-
-#### Aim
-
-    1. The issue with memory database.
-    2. The issues with a real DB
-    3. LocalDB
-    4. Small Intro to Docker and how can it help to create databases
-
-### Lesson 5 
-
-#### Aim
-
-    1. Revision
-
-## Week 6: Working in teams, team project.
-
-### Lesson 1
-
-#### Aim
-
-    1. Understanding Git, branching, merge-request, conflicts.
-    2. Scrum, sprint methodologies.
-    3. Divide into teams and work together to simulate real-life scenarios.
-
-#### Homework/Project
-
-    Major project: a Bank application. Be creative!
-    Suggestions: be able to register and login (ignore security for now),
-    Top up with the single click. Be able to send money to other account.
-    Extra ideas: investing, be able to request money. Be creative!
-
-#### Links
-    
-    How Banks operate - https://www.marketreview.com/how-banks-operate/
-    Revolut -http://www.boussiasconferences.gr/files/_boussias_conferences_content/presentations/digitalbanking_cy/2019/dimitris_litsikakis_digibanking_cy19.pdf
-    Scrum - https://en.wikipedia.org/wiki/Scrum_(software_development)
-    Graphical Git clients - https://git-scm.com/downloads/guis
-
-#### Lesson 2-3
-
-    Continue working on the Bank Project.
-
-## Week 6 CI/CD, Virtualization, Infrastructure?
-
-### Lesson 1
-
-    1. CI/CD in Github
-    2. Yml files
-
-### Lesson 2 
-
-    1. Docker
-
-### Lesson 3
-
-    1. Docker-Compose
-
-#### Lesson 4
+### Lesson 4 Kubernetes
 
     1. Kubernetes
 
-#### Lesson 5
+### Revision
 
-    1. Revision/Project
+    1. Revision
 
+## Week 6 Microservices
 
-## Week 7: Authentication and Microservices
+### Lesson 1 Microservices
+
+    1. Monolith
+    2. Microservices
+
+### Lesson 2 RabbitMq
+
+    1. Event Driven programming
+    2. API calls vs messages
+    3. Messaging technologies.
+    4. RabbiqMq
+    5. RabbitMq with Docker.
+
+### Lesson 3 RabbitMq continued
+
+    1. Publishing Event
+    2. Subscribing Events
+    3. Retries.
+
+### Lesson 4 Api Gateway and Logging
+
+    1. Ocelot
+    2. Importance of Logging in Microservices
+
+### Lesson 5 Background running tasks
+
+    1. BackgroundService
+    2. Hangfire
+
+## Week 6 Databases DeepDive
+
+### Lesson 1 SQL Recap
+
+    1. Recap of SQL.
+    2. Joins
+    3. Views
+    4. Procedures
+    5. Triggers
+    6. Functions
+
+### lesson 2 SQL Migrations
+
+    1. DbSchema as Code with Liquibase or Flyway.
+    2. Integration tests with real DB in Docker.
+
+### lesson 3 ORM and EFCore
+
+    1. ORM
+    2. EFCore Code first.
+    3. EfCore Migrations
+    4. EF weaknesses.
+
+### lesson 4 Document Databases
+
+    1. Document vs Relation
+    2. MongoDb 
+    3. MongoDb on Docker
+    4. MongoDB C#/.NET Driver
+
+### Lesson 5 Performace, Scaling
+
+    1. Query performance issues
+    2. Query optimization.
+    3. Vertical vs Horizontal scaling.
+    4. Partitioning/Sharding
+
+## Week 7 Authentication And useful nugets
 
 ### Lesson 1
 
-    1. Authentication is complex
-    2. ASP.NET Identity
+    1. Authentication vs Authorization
+    2. Register
+    3. Login
+    4. Hashing Passwords
+    5. Session Token
+    6. JWT
 
-### Lesson 2
+### Lesson 2 Authentication with HttpClient
 
-    1. Oauth2
-    2. Identity Server.
+    1. Securing API
+    2. Credentials
+    3. x-api-key
+    4. Bearer token
 
-### Lesson 3
+### Lesson 3 OAUTH2
 
-#### Aim
+    1. OAuth 2.0
+    2. Identity Server 4
 
-    1. Monolith vs Microservice.
-    2. Event Drive programming
-    3. Messaging technologies.
-    4. RabbitMq introduced
+### Lesson 4 REFIT Client
 
-### Homework/Project
+    1. REFIT
 
-    Main: Setup a first pipeline in GitHub, which checks builds and runs tests.
-    Extra:
-    
-#### Links
-    
-    CI/CD - https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
-    Azure - https://azure.microsoft.com/en-us/
+### Lesson 5 Productivity extensions
 
-### Lesson 4
+    1. Visual Studio Extensions
+    2. Add new file
+    3. Power tools
+    4. Useful shortcuts, snippets.
 
-#### Aim
+## Week 8 Design patterns
 
-   1. Dividing solution into different domains.
-   2. Event Handlers
-   3. Publish your own Nuget
+### Day 1 Solid
 
-#### Homework/Project
+    1. Solid
 
-    Main: Host a .NET project publicly.
-    Extra:
-    
-#### Links
+### Day 2 Design Patterns
 
-    Free web hosting - https://www.techradar.com/web-hosting/best-free-web-hosting
-    SmarterASP.net - https://www.smarterasp.net/
-    GitHub Pages - https://pages.github.com/
+    1. Strategy pattern
+    2. Factory
+    3. Adapter
+    4. Singleton
 
-### Lesson 5
+### Day 3 Mediator
 
-#### Aim
+    1. MediaTr 
+    2. CQRS
 
-    1. Api Gateway
-    2. Kubernetes basics
+### Day 4 Domain Driven Design
 
-### Homework/Project
+    1. DDD (Domain Driven Design)
+    2. Clean Architecture.
 
-    Main: To be added.
-    Extra:
-    
-#### Links
+### Day 5 Func Action Predicates
 
-## 8-9 Revision and team-work project
+    1. Functions Action Predicates
+    2. Working with Enums
+
+## Week 9 .NET framework and other Microsoft technologies
+
+### Day 1 .NET framework
+
+    1. NET core vs .NEt Framework
+    2. What does it mean to work on legacy code.
+    3. .NET framework project structure.
+  
+### Day 2 .NET Framework WCF/Soap
+
+    1. Missing dependency injection
+    2. Razor Pages application (asp.net mvc)
+    3. cshtml
