@@ -9,7 +9,7 @@ Example:
  'add candy' 
  'add sweet'
 
- 'list item'
+ 'list items'
  ->  
  'candy 2'
  'sweet 1'
