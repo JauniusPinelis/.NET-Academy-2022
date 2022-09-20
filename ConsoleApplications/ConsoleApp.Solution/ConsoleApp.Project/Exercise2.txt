@@ -6,9 +6,9 @@ with the following commands:
 1. "Add <itemname> <price>"
 2. "Remove <Itemname>"
 3. "Show balance" -> displays your balance (initial balance is 20 euros)
-4. "topup <money>" -> topup your balance;
-5. "buy <itemname>" -> buys an item if the buyer has enough money.
-6.. "display items" -> displays all items that you have bought.
+4. "Topup <money>" -> topup your balance;
+5. "Buy <itemname>" -> buys an item if the buyer has enough money.
+6.. "Display items" -> displays all items that you have bought.
 
 The information should be saved into a file. 
 That means when you restart the information does not dissappear.
