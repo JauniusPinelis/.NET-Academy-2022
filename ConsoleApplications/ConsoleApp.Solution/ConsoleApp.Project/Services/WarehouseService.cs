@@ -4,7 +4,14 @@ namespace ConsoleApp.Project.Services
 {
     public class WarehouseService
     {
-        private List<Item> _items = new List<Item>();
+        private List<Item> _items;
+        private FileJsonService _fileTextService;
+
+        public WarehouseService()
+        {
+            _fileTextService = new FileJsonService();
+            _items = _fileTextService.Import();
+        }
 
         public void Add(string itemName)
         {
@@ -21,6 +28,8 @@ namespace ConsoleApp.Project.Services
                     Name = itemName,
                 });
             }
+
+            _fileTextService.Write(_items);
         }
 
         private Item GetOne(string itemName)
