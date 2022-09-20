@@ -39,11 +39,18 @@ namespace ConsoleApp.Project.Services
 
             if (selectedItem != null)
             {
-                _items.Remove(selectedItem);
+                if (selectedItem.Quantity == 1)
+                {
+                    _items.Remove(selectedItem);
+                }
+                else
+                {
+                    selectedItem.Quantity--;
+                }
             }
             else
             {
-                //Console.WriteLine("Not found");
+                throw new ArgumentException("Item was not found");
             }
         }
     }

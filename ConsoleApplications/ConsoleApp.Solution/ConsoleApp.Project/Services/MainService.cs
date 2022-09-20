@@ -7,38 +7,41 @@
 
         public void ExecuteCommand(string command)
         {
-
-            command = command.ToLower();
-
-            if (command.StartsWith("add"))
+            try
             {
-                var name = command.Split(" ")[1];
-                // program can break here
+                command = command.ToLower();
 
-                _warehouseService.Add(name);
+                if (command.StartsWith("add"))
+                {
+                    var name = command.Split(" ")[1];
+                    // program can break here
 
-                Console.WriteLine($"{name} has been added");
+                    _warehouseService.Add(name);
+
+                    Console.WriteLine($"{name} has been added");
+                }
+                else if (command.StartsWith("list"))
+                {
+                    var items = _warehouseService.GetAll();
+
+                    items.ForEach(item => Console.WriteLine(item.ToString()));
+                }
+                else if (command.StartsWith("remove"))
+                {
+                    var name = command.Split(" ")[1];
+                    _warehouseService.Remove(name);
+
+                    Console.WriteLine($"{name} has been removed");
+                }
+                else
+                {
+                    throw new ArgumentException("Command was not found");
+                }
             }
-
-            if (command.StartsWith("list"))
+            catch (Exception ex)
             {
-                var items = _warehouseService.GetAll();
-                //foreach (var item in items)
-                //{
-                //    Console.WriteLine(item);
-                //}
-
-                items.ForEach(item => Console.WriteLine(item));
+                Console.WriteLine(ex.Message);
             }
-
-            if (command.StartsWith("remove"))
-            {
-                var name = command.Split(" ")[1];
-                _warehouseService.Remove(name);
-
-                Console.WriteLine($"{name} has been removed");
-            }
-
             // Who to do if nonsense
         }
     }
