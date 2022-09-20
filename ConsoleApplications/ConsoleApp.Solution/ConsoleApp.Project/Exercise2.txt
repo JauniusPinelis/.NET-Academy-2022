@@ -1,0 +1,19 @@
+﻿Create a new solution.
+
+We will be creating a console shop application
+with the following commands:
+
+1. "Add <itemname> <price>"
+2. "Remove <Itemname>"
+3. "Show balance" -> displays your balance (initial balance is 20 euros)
+4. "topup <money>" -> topup your balance;
+5. "display items" -> displays all items that you have bought.
+
+The information should be saved into a file. 
+That means when you restart the information does not dissappear.
+
+Non-functonal:
+1. Try Service-oriented approach.
+
+Advanced:
+Try error handling with try/catch.
