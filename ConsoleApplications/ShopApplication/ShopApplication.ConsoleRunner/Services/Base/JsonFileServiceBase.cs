@@ -2,7 +2,7 @@
 
 namespace ShopApplication.ConsoleRunner.Services.Base
 {
-    public class JsonFileServiceBase<T>
+    public abstract class JsonFileServiceBase<T>
     {
         private string _filePath;
 
