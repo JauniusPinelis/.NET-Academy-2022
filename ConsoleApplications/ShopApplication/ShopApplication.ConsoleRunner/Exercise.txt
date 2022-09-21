@@ -1,0 +1,13 @@
+﻿Create an application where you can add and modify item information.
+
+shopItem has the following the following information:
+1. Name
+2. Description.
+3. Tags . (for example: food, sweets, unhealthy)
+4. Price
+5. ExpiryDate
+
+also I should be able to add, list available tags.
+Tags should also have expiry date.
+
+Whole information should be saved to files.
