@@ -1,0 +1,37 @@
+1. Register a personal account with Github.
+2. Research .gitignore file. Why is it needed:
+https://learn.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio-2019
+
+The Exercise:
+You will create a school management system.
+We will have Modules and Classes. Module can have multiple classes.
+
+Module will have the following information
+Name, CreatedDate, UpdateDate, Description.
+
+Class:
+Name, CreatedDate, Description, Location (string)
+
+The Application will allow us to:
+1. Add Module
+2. Add Class
+3. Assign Class to a Module.
+4. Print Information of specific Module (with classes)
+-> Print Module ComputerSciene
+-> <Name> <CreatedDate> ... <all class names separated by comma> 
+5. Classes and Modules should be stored in separated text files.
+(they should be connected by id).  
+Tip -> Take max id and increment it by one select(a => a.Id).Max()
+5. The class, module information should be persistent.
+
+Tips:
+Use Generic Filestore to store Module and Class
+Use Extensoion method to print DateTime into 'dd/yyyy/mm, hh'
+Use Inheritance of abstract Model.
+
+6. Create a github Repository with .gitignore
+7. Push you code into that repository;
+
+I want a working version of you system in repository;
+It has to be a working version.
+

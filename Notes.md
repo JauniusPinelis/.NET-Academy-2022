@@ -23,3 +23,6 @@ https://stackoverflow.com/questions/11330384/extension-method-vs-helper-class
 
 4. Extension methods
 https://www.tutorialsteacher.com/csharp/csharp-extension-method
+
+6. Git Basics
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
