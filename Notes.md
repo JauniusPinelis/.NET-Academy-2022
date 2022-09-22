@@ -26,3 +26,19 @@ https://www.tutorialsteacher.com/csharp/csharp-extension-method
 
 6. Git Basics
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+### Day 4
+
+1. Scrum
+
+Developers, Product owner, Scrum Master
+
+Planning, Backlog , 2-weekly sprints, Retrospectives, capacity, estimates, jirra.
+
+2. Asp.NET Web Api
+
+3. Attributes
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/
+
+4. Dependency Injection
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0
