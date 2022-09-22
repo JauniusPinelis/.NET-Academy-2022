@@ -1,0 +1,20 @@
+You will create a asp.net WEB API for ShopItem management.
+
+ShopItem should have Name, Price (use decimal type), CreatedDate (should be populate by default)
+
+Please allow the following actions:
+Create (HttpPost)
+GetAll (HttpGet)
+GetById (HttpGet)
+Delete (HttpDelete)
+Update (HttpPut)
+
+Please make data persistent into a txt file. Try use Repository layer for text writing.
+https://codewithmukesh.com/blog/repository-pattern-in-aspnet-core/
+Controller -> Service -> Repository
+
+Actions should return correct StatusCodes.
+
+Price should be validated (no less then 0)
+https://code-maze.com/aspnetcore-modelstate-validation-web-api/
+

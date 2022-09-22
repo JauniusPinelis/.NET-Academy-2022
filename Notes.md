@@ -42,3 +42,6 @@ https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attri
 
 4. Dependency Injection
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0
+
+5. Status Codes
+https://dotnettutorials.net/lesson/http-status-codes-in-asp-net-core-web-api/
