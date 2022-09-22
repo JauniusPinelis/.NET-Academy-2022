@@ -23,6 +23,21 @@ namespace FirstWebApi.Controllers
             return StatusCode(201);
         }
 
+        [HttpPut]
+        public IActionResult Update(Person person)
+        {
+            try
+            {
+                _personService.Update(person);
+                return NoContent();
+            }
+            catch (ArgumentNullException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -32,15 +47,28 @@ namespace FirstWebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            return Ok(_personService.GetById(id));
+            try
+            {
+                return Ok(_personService.GetById(id));
+            }
+            catch (ArgumentNullException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_personService.Remove())
+            try
+            {
+                _personService.Remove(id);
+                return NoContent();
+            }
+            catch (ArgumentNullException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
-
-
-
     }
 }
