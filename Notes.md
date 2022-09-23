@@ -58,3 +58,7 @@ https://stackoverflow.com/questions/29894727/creating-a-datetime-using-automappe
 
 4. Async/await
 https://www.c-sharpcorner.com/article/async-and-await-in-c-sharp/#:~:text=Async%20and%20await%20in%20C%23%20are%20the%20code%20markers%2C%20which,for%20understanding%20the%20programming%20concept.
+
+5. HttpClient
+https://code-maze.com/httpclient-with-asp-net-core-tutorial/
+https://code-maze.com/using-httpclientfactory-in-asp-net-core-applications/

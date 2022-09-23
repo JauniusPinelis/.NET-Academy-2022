@@ -18,9 +18,9 @@ namespace FirstWebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreatePerson person)
+        public async Task<IActionResult> Create(CreatePerson person)
         {
-            _personService.Add(person);
+            await _personService.Add(person);
             return StatusCode(201);
         }
 

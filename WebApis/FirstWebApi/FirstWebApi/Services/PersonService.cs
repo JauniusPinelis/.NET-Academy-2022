@@ -9,12 +9,20 @@ namespace FirstWebApi.Services
     public class PersonService
     {
         private readonly PersonRepository _personRepository;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMapper _mapper;
 
-        public PersonService(PersonRepository personRepository, IMapper mapper)
+        public PersonService(PersonRepository personRepository, IHttpClientFactory httpClientFactory, IMapper mapper)
         {
             _personRepository = personRepository;
+            _httpClientFactory = httpClientFactory;
             _mapper = mapper;
+        }
+
+        public async Task FetchDataAsync()
+        {
+            var httpClient = _httpClientFactory.CreateClient();
+            var data = await httpClient.GetFromJsonAsync<List<UserDto>>("https://jsonplaceholder.typicode.com/users");
         }
 
         public async Task Add(CreatePerson person)
@@ -49,6 +57,8 @@ namespace FirstWebApi.Services
 
         public async Task<List<Person>> GetAll()
         {
+            await FetchDataAsync();
+
             var entities = await _personRepository.GetAllAsync();
             return entities.Select(p => _mapper.Map<Person>(p)).ToList();
         }
