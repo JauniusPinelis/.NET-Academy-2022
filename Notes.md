@@ -45,3 +45,12 @@ https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?
 
 5. Status Codes
 https://dotnettutorials.net/lesson/http-status-codes-in-asp-net-core-web-api/
+
+### Day 5
+
+1. Dtos (Data Transfer Objects) mapping to entities.
+
+2. Controllers -> Services -> Repositories
+
+3. Automapper.
+https://code-maze.com/automapper-net-core/

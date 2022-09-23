@@ -1,5 +1,5 @@
 ﻿using FirstWebApi.Dtos;
-using FirstWebApi.Entities;
+using FirstWebApi.Exceptions;
 using FirstWebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,17 +24,21 @@ namespace FirstWebApi.Controllers
             return StatusCode(201);
         }
 
-        [HttpPut]
-        public IActionResult Update(PersonEntity person)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, UpdatePerson updatePerson)
         {
             try
             {
-                _personService.Update(person);
+                _personService.Update(id, updatePerson);
                 return NoContent();
             }
-            catch (ArgumentNullException ex)
+            catch (NotFoundException ex)
             {
                 return NotFound(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
             }
 
         }

@@ -41,6 +41,20 @@ namespace FirstWebApi.Repositories
             WriteAll(persons);
         }
 
+        public void Update(PersonEntity person)
+        {
+            var persons = GetAll();
+            var personToUpdate = persons.FirstOrDefault(p => p.Id == person.Id);
+
+            personToUpdate.FirstName = person.FirstName;
+            personToUpdate.LastName = person.LastName;
+            personToUpdate.LastModifiedUtc = person.LastModifiedUtc;
+
+            WriteAll(persons);
+
+            //This part could be improved
+        }
+
         private void WriteAll(List<PersonEntity> persons)
         {
             var data = JsonConvert.SerializeObject(persons);

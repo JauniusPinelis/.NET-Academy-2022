@@ -1,5 +1,7 @@
-﻿using FirstWebApi.Dtos;
+﻿using AutoMapper;
+using FirstWebApi.Dtos;
 using FirstWebApi.Entities;
+using FirstWebApi.Exceptions;
 using FirstWebApi.Repositories;
 
 namespace FirstWebApi.Services
@@ -7,61 +9,75 @@ namespace FirstWebApi.Services
     public class PersonService
     {
         private readonly PersonRepository _personRepository;
+        private readonly IMapper _mapper;
 
-        public PersonService(PersonRepository personRepository)
+        public PersonService(PersonRepository personRepository, IMapper mapper)
         {
             _personRepository = personRepository;
+            _mapper = mapper;
         }
 
         public void Add(CreatePerson person)
         {
             // map from dto to entity
-            var entity = new PersonEntity
-            {
-                Id = 1,//autogenerate
-                FirstName = person.FirstName,
-                LastName = person.LastName,
-            };
+            //var entity = new PersonEntity
+            //{
+            //    Id = 1,//autogenerate
+            //    FirstName = person.FirstName,
+            //    LastName = person.LastName,
+            //};
+
+            var entity = _mapper.Map<PersonEntity>(person);
+            entity.Id = 1;
 
             _personRepository.Add(entity);
         }
 
-        public void Update(PersonEntity person)
+        public void Update(int id, UpdatePerson updatePerson)
         {
-            var existingPerson = GetById(person.Id);
+            if (id != updatePerson.Id)
+            {
+                throw new ArgumentException("Ids do not match");
+            }
 
-            existingPerson.LastName = person.LastName;
-            existingPerson.FirstName = person.FirstName;
+            var existingPerson = GetById(updatePerson.Id);
+
+            if (updatePerson == null)
+            {
+                throw new NotFoundException();
+            }
+
+            //var entity = new PersonEntity
+            //{
+            //    Id = id,
+            //    LastModifiedUtc = DateTime.UtcNow,
+            //    FirstName = person.FirstName,
+            //    LastName = person.LastName
+            //};
+            var entity = _mapper.Map<PersonEntity>(updatePerson);
+            entity.LastModifiedUtc = DateTime.UtcNow;
+
+
+
+            _personRepository.Update(entity);
         }
 
         public List<Person> GetAll()
         {
             return _personRepository.GetAll()
-                .Select(p => new Person
-                {
-                    FirstName = p.FirstName,
-                    CreatedUtc = p.CreatedUtc,
-                    LastModifiedUtc = p.LastModifiedUtc,
-                    LastName = p.LastName
-                }).ToList();
+                .Select(p => _mapper.Map<Person>(p)).ToList();
         }
 
         public Person GetById(int id)
         {
-            var person = _personRepository.GetById(id);
+            var entity = _personRepository.GetById(id);
 
-            if (person == null)
+            if (entity == null)
             {
                 throw new ArgumentNullException("person not found");
             }
 
-            return new Person
-            {
-                FirstName = person.FirstName,
-                CreatedUtc = person.CreatedUtc,
-                LastModifiedUtc = person.LastModifiedUtc,
-                LastName = person.LastName
-            };
+            return _mapper.Map<Person>(entity);
         }
 
         public void Remove(int id)
