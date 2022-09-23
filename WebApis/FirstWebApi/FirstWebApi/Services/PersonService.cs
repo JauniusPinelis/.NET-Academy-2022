@@ -1,17 +1,32 @@
-﻿using FirstWebApi.Models;
+﻿using FirstWebApi.Dtos;
+using FirstWebApi.Entities;
+using FirstWebApi.Repositories;
 
 namespace FirstWebApi.Services
 {
     public class PersonService
     {
-        private List<Person> _persons = new List<Person>();
+        private readonly PersonRepository _personRepository;
 
-        public void Add(Person person)
+        public PersonService(PersonRepository personRepository)
         {
-            _persons.Add(person);
+            _personRepository = personRepository;
         }
 
-        public void Update(Person person)
+        public void Add(CreatePerson person)
+        {
+            // map from dto to entity
+            var entity = new PersonEntity
+            {
+                Id = 1,//autogenerate
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+            };
+
+            _personRepository.Add(entity);
+        }
+
+        public void Update(PersonEntity person)
         {
             var existingPerson = GetById(person.Id);
 
@@ -21,26 +36,44 @@ namespace FirstWebApi.Services
 
         public List<Person> GetAll()
         {
-            return _persons;
+            return _personRepository.GetAll()
+                .Select(p => new Person
+                {
+                    FirstName = p.FirstName,
+                    CreatedUtc = p.CreatedUtc,
+                    LastModifiedUtc = p.LastModifiedUtc,
+                    LastName = p.LastName
+                }).ToList();
         }
 
         public Person GetById(int id)
         {
-            var person = _persons.FirstOrDefault(p => p.Id.Equals(id));
+            var person = _personRepository.GetById(id);
 
             if (person == null)
             {
                 throw new ArgumentNullException("person not found");
             }
 
-            return person;
+            return new Person
+            {
+                FirstName = person.FirstName,
+                CreatedUtc = person.CreatedUtc,
+                LastModifiedUtc = person.LastModifiedUtc,
+                LastName = person.LastName
+            };
         }
 
         public void Remove(int id)
         {
-            var person = GetById(id);
+            var person = _personRepository.GetById(id);
 
-            _persons.Remove(person);
+            if (person == null)
+            {
+                throw new ArgumentNullException("person not found");
+            }
+
+            _personRepository.Remove(person);
         }
     }
 }

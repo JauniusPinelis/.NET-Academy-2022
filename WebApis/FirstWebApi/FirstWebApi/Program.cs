@@ -1,3 +1,4 @@
+using FirstWebApi.Repositories;
 using FirstWebApi.Services;
 
 namespace FirstWebApi
@@ -10,7 +11,8 @@ namespace FirstWebApi
 
             // Add(Register) services to the container.
             // Transient, Scoped, Singleton -> lifetimes
-            builder.Services.AddSingleton<PersonService>();
+            builder.Services.AddTransient<PersonService>();
+            builder.Services.AddTransient<PersonRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

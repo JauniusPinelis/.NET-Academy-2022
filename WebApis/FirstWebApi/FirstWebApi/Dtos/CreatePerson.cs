@@ -1,9 +1,7 @@
-﻿namespace FirstWebApi.Models
+﻿namespace FirstWebApi.Dtos
 {
-    public class Person
+    public class CreatePerson
     {
-        public int Id { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

@@ -1,4 +1,5 @@
-﻿using FirstWebApi.Models;
+﻿using FirstWebApi.Dtos;
+using FirstWebApi.Entities;
 using FirstWebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,14 +18,14 @@ namespace FirstWebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Person person)
+        public IActionResult Create(CreatePerson person)
         {
             _personService.Add(person);
             return StatusCode(201);
         }
 
         [HttpPut]
-        public IActionResult Update(Person person)
+        public IActionResult Update(PersonEntity person)
         {
             try
             {
