@@ -1,0 +1,16 @@
+You will create an application which will collect and save Weather data:
+
+1. Find a weather api which would work for you (should have trial or free)
+You will get an API-Key, that you will need to add to your requests.
+
+Your API should have the following endpoints:
+
+1. An endpoint for fetching data from your selected Weather api and save it into text file.
+You should be filter by date and location. And you dont need to get all properties:
+just temperature, wind speed and description? (dont waste time mapping all properties).
+Tip (in visual studio you can paste json and it will create a class for you.) 
+
+2. An endpoint where you get back all the data from text file. Please remap with Automapper into DTO.
+When writing and reading from file, please use Async.
+
+
