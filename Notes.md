@@ -54,3 +54,7 @@ https://dotnettutorials.net/lesson/http-status-codes-in-asp-net-core-web-api/
 
 3. Automapper.
 https://code-maze.com/automapper-net-core/
+https://stackoverflow.com/questions/29894727/creating-a-datetime-using-automapper
+
+4. Async/await
+https://www.c-sharpcorner.com/article/async-and-await-in-c-sharp/#:~:text=Async%20and%20await%20in%20C%23%20are%20the%20code%20markers%2C%20which,for%20understanding%20the%20programming%20concept.

@@ -17,23 +17,15 @@ namespace FirstWebApi.Services
             _mapper = mapper;
         }
 
-        public void Add(CreatePerson person)
+        public async Task Add(CreatePerson person)
         {
-            // map from dto to entity
-            //var entity = new PersonEntity
-            //{
-            //    Id = 1,//autogenerate
-            //    FirstName = person.FirstName,
-            //    LastName = person.LastName,
-            //};
-
             var entity = _mapper.Map<PersonEntity>(person);
             entity.Id = 1;
 
-            _personRepository.Add(entity);
+            await _personRepository.AddAsync(entity);
         }
 
-        public void Update(int id, UpdatePerson updatePerson)
+        public async Task UpdateAsync(int id, UpdatePerson updatePerson)
         {
             if (id != updatePerson.Id)
             {
@@ -47,25 +39,18 @@ namespace FirstWebApi.Services
                 throw new NotFoundException();
             }
 
-            //var entity = new PersonEntity
-            //{
-            //    Id = id,
-            //    LastModifiedUtc = DateTime.UtcNow,
-            //    FirstName = person.FirstName,
-            //    LastName = person.LastName
-            //};
             var entity = _mapper.Map<PersonEntity>(updatePerson);
             entity.LastModifiedUtc = DateTime.UtcNow;
 
 
 
-            _personRepository.Update(entity);
+            await _personRepository.UpdateAsync(entity);
         }
 
-        public List<Person> GetAll()
+        public async Task<List<Person>> GetAll()
         {
-            return _personRepository.GetAll()
-                .Select(p => _mapper.Map<Person>(p)).ToList();
+            var entities = await _personRepository.GetAllAsync();
+            return entities.Select(p => _mapper.Map<Person>(p)).ToList();
         }
 
         public Person GetById(int id)
@@ -80,16 +65,16 @@ namespace FirstWebApi.Services
             return _mapper.Map<Person>(entity);
         }
 
-        public void Remove(int id)
+        public async Task RemoveAsync(int id)
         {
-            var person = _personRepository.GetById(id);
+            var person = await _personRepository.GetById(id);
 
             if (person == null)
             {
                 throw new ArgumentNullException("person not found");
             }
 
-            _personRepository.Remove(person);
+            await _personRepository.RemoveAsync(person);
         }
     }
 }

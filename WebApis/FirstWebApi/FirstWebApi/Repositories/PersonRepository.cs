@@ -7,58 +7,58 @@ namespace FirstWebApi.Repositories
     {
         private readonly string _filePath = "persons.txt";
 
-        public void Add(PersonEntity entity)
+        public async Task AddAsync(PersonEntity entity)
         {
-            var entities = GetAll();
+            var entities = await GetAllAsync();
 
             entities.Add(entity);
 
-            WriteAll(entities);
+            await WriteAllAsync(entities);
         }
 
-        public PersonEntity GetById(int id)
+        public async Task<PersonEntity> GetById(int id)
         {
-            var persons = GetAll();
+            var persons = await GetAllAsync();
             return persons.FirstOrDefault(p => p.Id == id);
         }
 
-        public List<PersonEntity> GetAll()
+        public async Task<List<PersonEntity>> GetAllAsync()
         {
             if (!File.Exists(_filePath))
             {
-                File.WriteAllText(_filePath, "[]");
+                await File.WriteAllTextAsync(_filePath, "[]");
             }
-            var data = File.ReadAllText(_filePath);
+            var data = await File.ReadAllTextAsync(_filePath);
             var persons = JsonConvert.DeserializeObject<List<PersonEntity>>(data);
 
             return persons.Where(p => !p.IsDeleted).ToList();
         }
 
-        public void Remove(PersonEntity person)
+        public async Task RemoveAsync(PersonEntity person)
         {
-            var persons = GetAll();
+            var persons = await GetAllAsync();
             persons.Remove(person);
-            WriteAll(persons);
+            await WriteAllAsync(persons);
         }
 
-        public void Update(PersonEntity person)
+        public async Task UpdateAsync(PersonEntity person)
         {
-            var persons = GetAll();
+            var persons = await GetAllAsync();
             var personToUpdate = persons.FirstOrDefault(p => p.Id == person.Id);
 
             personToUpdate.FirstName = person.FirstName;
             personToUpdate.LastName = person.LastName;
             personToUpdate.LastModifiedUtc = person.LastModifiedUtc;
 
-            WriteAll(persons);
+            await WriteAllAsync(persons);
 
             //This part could be improved
         }
 
-        private void WriteAll(List<PersonEntity> persons)
+        private async Task WriteAllAsync(List<PersonEntity> persons)
         {
             var data = JsonConvert.SerializeObject(persons);
-            File.WriteAllText(_filePath, data);
+            await File.WriteAllTextAsync(_filePath, data);
         }
     }
 }

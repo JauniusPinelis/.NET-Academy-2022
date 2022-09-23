@@ -25,11 +25,11 @@ namespace FirstWebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, UpdatePerson updatePerson)
+        public async Task<IActionResult> Update(int id, UpdatePerson updatePerson)
         {
             try
             {
-                _personService.Update(id, updatePerson);
+                await _personService.UpdateAsync(id, updatePerson);
                 return NoContent();
             }
             catch (NotFoundException ex)
@@ -63,11 +63,11 @@ namespace FirstWebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                _personService.Remove(id);
+                await _personService.RemoveAsync(id);
                 return NoContent();
             }
             catch (ArgumentNullException ex)
