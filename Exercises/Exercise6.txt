@@ -1,0 +1,13 @@
+Create A web api for ShopItems:
+ShopItem should have Name, Quantity.
+
+Allow CRUD (Create, Read, Update, Delete).
+Use Postgre and Dapper to connect and perform queries.
+ConnectionString should be present in AppSettings.json
+
+Extra:
+1. All Database actions should be in Repository layer.
+2. Create a separate project for database code. Api should now know what Repository uses.
+3. Validate that Name is unique and that Name is longer than 5 characters and that Quantity is more than 0. 
+Use FluentValidation library for validation.
+4. Research the best way for opening, closing postgre connections.
