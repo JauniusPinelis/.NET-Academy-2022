@@ -62,3 +62,15 @@ https://www.c-sharpcorner.com/article/async-and-await-in-c-sharp/#:~:text=Async%
 5. HttpClient
 https://code-maze.com/httpclient-with-asp-net-core-tutorial/
 https://code-maze.com/using-httpclientfactory-in-asp-net-core-applications/
+
+### Week 2 Day 1
+
+1. Multiple projects in a solution.
+
+2. Postgre intro
+https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
+
+3. Dapper
+https://www.c-sharpcorner.com/article/getting-started-with-postgresql-using-dapper-in-net-core/
+
+https://stackoverflow.com/questions/34533349/how-to-get-dapper-to-ignore-remove-underscores-in-field-names-when-mapping
