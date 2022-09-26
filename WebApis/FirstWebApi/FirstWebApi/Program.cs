@@ -1,3 +1,4 @@
+using FirstWebApi.ApiClients;
 using FirstWebApi.Repositories;
 using FirstWebApi.Services;
 
@@ -15,7 +16,8 @@ namespace FirstWebApi
             builder.Services.AddTransient<PersonRepository>();
 
             builder.Services.AddAutoMapper(typeof(Program));
-            builder.Services.AddHttpClient();
+
+            builder.Services.AddApiClients();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

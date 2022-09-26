@@ -1,6 +1,6 @@
-﻿namespace FirstWebApi.Dtos
+﻿namespace FirstWebApi.ApiClients.Contracts
 {
-    public class UserDto
+    public class PlaceholderUser
     {
         public string Email { get; set; }
 

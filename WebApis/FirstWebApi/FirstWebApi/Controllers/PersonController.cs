@@ -17,7 +17,7 @@ namespace FirstWebApi.Controllers
             _personService = personService;
         }
 
-        [HttpPost]
+        [HttpPost()]
         public async Task<IActionResult> Create(CreatePerson person)
         {
             await _personService.Add(person);
@@ -44,9 +44,15 @@ namespace FirstWebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_personService.GetAll());
+            return Ok(await _personService.GetAll());
+        }
+
+        [HttpGet("ExternalData")]
+        public async Task<IActionResult> GetAllExternal()
+        {
+            return Ok(await _personService.GetAllExternal());
         }
 
         [HttpGet("{id}")]

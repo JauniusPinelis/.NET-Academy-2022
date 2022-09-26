@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FirstWebApi.ApiClients;
+using FirstWebApi.ApiClients.Contracts;
 using FirstWebApi.Dtos;
 using FirstWebApi.Entities;
 using FirstWebApi.Exceptions;
@@ -9,20 +11,19 @@ namespace FirstWebApi.Services
     public class PersonService
     {
         private readonly PersonRepository _personRepository;
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly JsonPlaceholderApiClient _jsonPlaceholderApiClient;
         private readonly IMapper _mapper;
 
-        public PersonService(PersonRepository personRepository, IHttpClientFactory httpClientFactory, IMapper mapper)
+        public PersonService(PersonRepository personRepository, JsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
         {
             _personRepository = personRepository;
-            _httpClientFactory = httpClientFactory;
+            _jsonPlaceholderApiClient = jsonPlaceholderApiClient;
             _mapper = mapper;
         }
 
-        public async Task FetchDataAsync()
+        private async Task<List<PlaceholderUser>> FetchDataAsync()
         {
-            var httpClient = _httpClientFactory.CreateClient();
-            var data = await httpClient.GetFromJsonAsync<List<UserDto>>("https://jsonplaceholder.typicode.com/users");
+            return await _jsonPlaceholderApiClient.FetchData();
         }
 
         public async Task Add(CreatePerson person)
@@ -57,11 +58,16 @@ namespace FirstWebApi.Services
 
         public async Task<List<Person>> GetAll()
         {
-            await FetchDataAsync();
 
             var entities = await _personRepository.GetAllAsync();
             return entities.Select(p => _mapper.Map<Person>(p)).ToList();
         }
+
+        public async Task<List<PlaceholderUser>> GetAllExternal()
+        {
+            return await FetchDataAsync();
+        }
+
 
         public Person GetById(int id)
         {
