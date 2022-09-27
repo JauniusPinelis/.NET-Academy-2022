@@ -1,4 +1,5 @@
-﻿using DatabaseDemo.Repositories.Repositories;
+﻿using DatabaseDemo.Repositories.Entities;
+using DatabaseDemo.Repositories.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseDemo.Controllers
@@ -20,6 +21,13 @@ namespace DatabaseDemo.Controllers
 
             var entities = await _shopItemRepository.GetAllAsync();
             return Ok(entities);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ShopItemEntity shopItemEntity)
+        {
+            await _shopItemRepository.InsertAsync(shopItemEntity);
+            return StatusCode(201);
         }
     }
 }
