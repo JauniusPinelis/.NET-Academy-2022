@@ -74,3 +74,12 @@ https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-
 https://www.c-sharpcorner.com/article/getting-started-with-postgresql-using-dapper-in-net-core/
 
 https://stackoverflow.com/questions/34533349/how-to-get-dapper-to-ignore-remove-underscores-in-field-names-when-mapping
+
+### Day 2
+
+1. Scrum
+
+2. Dapper Continued
+
+3. DbUp migration tool 
+https://dbup.readthedocs.io/en/latest/

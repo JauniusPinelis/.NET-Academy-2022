@@ -1,7 +1,5 @@
-﻿using Dapper;
-using DatabaseDemo.Entities;
+﻿using DatabaseDemo.Repositories.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Npgsql;
 
 namespace DatabaseDemo.Controllers
 {
@@ -9,38 +7,19 @@ namespace DatabaseDemo.Controllers
     [Route("Shopitems")]
     public class ShopitemControler : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _connectionString;
+        private ShopItemRepository _shopItemRepository;
 
-        public ShopitemControler(IConfiguration configuration)
+        public ShopitemControler(ShopItemRepository shopItemRepository)
         {
-            _configuration = configuration;
-            _connectionString = _configuration.GetConnectionString("Default");
-        }
-
-        [HttpPost]
-        public IActionResult Create(ShopItemEntity entity)
-        {
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Execute("insert into public.actors (first_name) values (@FirstName)", new
-                {
-                    entity.FirstName
-                });
-            }
-            return Ok();
+            _shopItemRepository = shopItemRepository;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
 
-            List<ShopItemEntity> list = new();
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                list = connection.Query<ShopItemEntity>("SELECT * FROM public.actors").ToList();
-            }
-            return Ok();
+            var entities = await _shopItemRepository.GetAllAsync();
+            return Ok(entities);
         }
     }
 }

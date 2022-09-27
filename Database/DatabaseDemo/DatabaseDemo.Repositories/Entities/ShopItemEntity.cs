@@ -1,4 +1,4 @@
-﻿namespace DatabaseDemo.Entities
+﻿namespace DatabaseDemo.Repositories.Entities
 {
     public class ShopItemEntity
     {
