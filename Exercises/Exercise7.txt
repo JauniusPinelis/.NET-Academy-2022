@@ -1,0 +1,17 @@
+This is a continuation of Exercise 7:
+There will be extra features:
+
+0. Try installing https://dbeaver.io/ or maybe other nice GUI?
+1. Please install and try DBup Nuget
+https://dbup.readthedocs.io/en/latest/
+2. Introduce DTos, Services, and Automapper.
+
+3. Add GetById ShopItem functionality.
+if not found it should return 404.
+Try handling this with Try/Catch and exception handlig middleware:
+https://code-maze.com/global-error-handling-aspnetcore/
+
+4. Introduce Shop entity (it should have Id and Name).
+Create one-to-many relationship to Shopitem. 
+Create CRUD for Shop.
+Think how can you use generic in repository to save code.
