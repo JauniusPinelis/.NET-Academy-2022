@@ -83,3 +83,7 @@ https://stackoverflow.com/questions/34533349/how-to-get-dapper-to-ignore-remove-
 
 3. DbUp migration tool 
 https://dbup.readthedocs.io/en/latest/
+
+4. Git Branches/ pull-reqests
+
+This will be in a separate branch, not in main
