@@ -14,6 +14,8 @@ namespace DatabaseDemo.Repositories.Extensions
             services.AddTransient((sp) => new NpgsqlConnection(connectionString));
 
             services.AddTransient<ShopItemRepository>();
+            services.AddTransient<ShopRepository>();
+            services.AddTransient<TagRepository>();
         }
     }
 }

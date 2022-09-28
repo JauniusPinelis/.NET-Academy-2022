@@ -29,5 +29,11 @@ namespace DatabaseDemo.Controllers
             await _shopItemRepository.InsertAsync(shopItemEntity);
             return StatusCode(201);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _shopItemRepository.GetByIdAsync(id));
+        }
     }
 }

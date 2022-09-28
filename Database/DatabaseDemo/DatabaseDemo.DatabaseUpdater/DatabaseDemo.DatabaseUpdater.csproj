@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,10 +10,14 @@
   <ItemGroup>
     <None Remove="Scripts\Script0001-CreateTable.sql" />
     <None Remove="Scripts\Script0002-AlterTable.sql" />
+    <None Remove="Scripts\Script0003-Create Shop.sql" />
+    <None Remove="Scripts\Script0004-Tags.sql" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Scripts\Script0001-CreateTable.sql" />
+    <EmbeddedResource Include="Scripts\Script0004-Tags.sql" />
+    <EmbeddedResource Include="Scripts\Script0003-Create Shop.sql" />
     <EmbeddedResource Include="Scripts\Script0002-AlterTable.sql" />
   </ItemGroup>
 

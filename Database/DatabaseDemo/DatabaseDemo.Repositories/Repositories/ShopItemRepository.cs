@@ -32,5 +32,32 @@ namespace DatabaseDemo.Repositories.Repositories
                 shopItemEntity.Description
             });
         }
+
+        public async Task<List<ShopItemEntity>> GetByShopId(int shopId)
+        {
+            var sqlBuilder = new SqlBuilder();
+
+            var builderTemplate = sqlBuilder.AddTemplate("select * from shop_items /**where**/");
+            sqlBuilder.Where("shop_id = @shopId", new
+            {
+                shopId
+            });
+
+            var entities = await _connection.QueryAsync<ShopItemEntity>(builderTemplate.RawSql, builderTemplate.Parameters);
+            return entities.ToList();
+        }
+
+        public async Task<ShopItemEntity> GetByIdAsync(int id)
+        {
+            var sqlBuilder = new SqlBuilder();
+
+            var builderTemplate = sqlBuilder.AddTemplate("select * from shop_items /**where**/");
+            sqlBuilder.Where("id = @id", new
+            {
+                id
+            });
+
+            return await _connection.QueryFirstAsync<ShopItemEntity>(builderTemplate.RawSql, builderTemplate.Parameters);
+        }
     }
 }

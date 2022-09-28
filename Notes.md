@@ -86,4 +86,11 @@ https://dbup.readthedocs.io/en/latest/
 
 4. Git Branches/ pull-reqests
 
-This will be in a separate branch, not in main
+### Day 3
+
+1. Dapper SqlBuilder
+
+2. One to Many and Transaction (Postgre)
+https://www.postgresql.org/docs/current/tutorial-transactions.html
+
+3. Many to Many.
