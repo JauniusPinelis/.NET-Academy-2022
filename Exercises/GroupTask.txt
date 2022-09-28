@@ -36,6 +36,7 @@ Requirements:
 1. Try to plan and divide tasks similar to Scrum.
 https://trello.com/
 2. Create Github repository and invite your team member.
+https://github.com
 3. Use git flow -> Branch from Main, Commit, Pull-request, review, merge.
 4. Main branch should be stable.
 5. Plan together, have your progress visible in trello, try to avoid merge conflicts.
