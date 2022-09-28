@@ -1,0 +1,42 @@
+Teams:
+
+Arnas Bagocius
+Gintaras Armonaitis
+
+Dominykas Gečas 
+Emilija Vaisvalavičiūtė
+
+Dovydas Čeponis
+Gustas Kononovas
+
+Jukubas Keturakis
+Gvidas Rimeikis
+
+Marius Jasiunas
+Martynas Gedutis
+
+Exercise:
+You will create an backend API for banking system:
+
+1. Be able create Client (FirstName, LastName, PersonalCode)
+2. Be able to modify and Get Client info. (single client)
+3. Be able to create bank account(accountNumber, CreatedDate, accounttype).
+4. I want to assign an account to a customer.
+5. I should be able to Crud AccountTypes (Personal, Savings, Virtual)
+6. I should be able to filter accounts by accountType.
+7. Be able to Crud Address (House Number, Street, City, CountryCode)
+and assign it to a Client
+7. Account should have balance (money) in it.
+8. Be able to toup your account.
+9. Be should be able to send money from one account to another account. (transactions)
+10. be able to activate/deactivate accounts.
+11. Be able to get Transaction info.
+
+Requirements:
+1. Try to plan and divide tasks similar to Scrum.
+https://trello.com/
+2. Create Github repository and invite your team member.
+3. Use git flow -> Branch from Main, Commit, Pull-request, review, merge.
+4. Main branch should be stable.
+5. Plan together, have your progress visible in trello, try to avoid merge conflicts.
+

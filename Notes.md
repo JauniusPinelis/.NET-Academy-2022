@@ -93,4 +93,4 @@ https://dbup.readthedocs.io/en/latest/
 2. One to Many and Transaction (Postgre)
 https://www.postgresql.org/docs/current/tutorial-transactions.html
 
-3. Many to Many.
+3. Many to Many relationship
