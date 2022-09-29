@@ -40,4 +40,4 @@ https://github.com
 3. Use git flow -> Branch from Main, Commit, Pull-request, review, merge.
 4. Main branch should be stable.
 5. Plan together, have your progress visible in trello, try to avoid merge conflicts.
-
+This is another new requirement. this is 2
