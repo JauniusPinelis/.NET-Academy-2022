@@ -94,3 +94,18 @@ https://dbup.readthedocs.io/en/latest/
 https://www.postgresql.org/docs/current/tutorial-transactions.html
 
 3. Many to Many relationship
+
+### Day 4
+
+1. User Secrets in Console app
+https://www.programmingwithwolfgang.com/use-net-secrets-in-console-application/
+
+2. Architecture:
+MIcroservices:
+https://github.com/dotnet-architecture/eShopOnContainers
+Monolith
+https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/media/image5-9.png
+
+3. https://Draw.io
+
+4. chaotic summary of deployments.
