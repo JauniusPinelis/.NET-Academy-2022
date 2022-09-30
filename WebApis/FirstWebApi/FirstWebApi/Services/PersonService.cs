@@ -10,11 +10,11 @@ namespace FirstWebApi.Services
 {
     public class PersonService
     {
-        private readonly PersonRepository _personRepository;
+        private readonly IPersonRepository _personRepository;
         private readonly JsonPlaceholderApiClient _jsonPlaceholderApiClient;
         private readonly IMapper _mapper;
 
-        public PersonService(PersonRepository personRepository, JsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
+        public PersonService(IPersonRepository personRepository, JsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
         {
             _personRepository = personRepository;
             _jsonPlaceholderApiClient = jsonPlaceholderApiClient;

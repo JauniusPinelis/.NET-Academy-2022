@@ -13,7 +13,7 @@ namespace FirstWebApi
             // Add(Register) services to the container.
             // Transient, Scoped, Singleton -> lifetimes
             builder.Services.AddTransient<PersonService>();
-            builder.Services.AddTransient<PersonRepository>();
+            builder.Services.AddTransient<IPersonRepository, PersonRepository>();
 
             builder.Services.AddAutoMapper(typeof(Program));
 

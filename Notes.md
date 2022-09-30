@@ -109,3 +109,14 @@ https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/medi
 3. https://Draw.io
 
 4. chaotic summary of deployments.
+
+Day 5.
+
+1. Unit testing with Nunit.
+2. aaa
+   https://www.c-sharpcorner.com/UploadFile/dacca2/fundamental-of-unit-testing-understand-aaa-in-unit-testing/
+
+3. naming tests:
+https://stackoverflow.com/questions/155436/unit-test-naming-best-practices
+
+4. Interfaces
