@@ -1,0 +1,30 @@
+﻿Create a new solution.
+
+We will be creating a console shop application
+with the following commands:
+
+1. "Add <itemname> <price>"
+2. "Remove <Itemname>"
+3. "Show balance" -> displays your balance (initial balance is 20 euros)
+4. "Topup <money>" -> topup your balance;
+5. "Buy <itemname>" -> buys an item if the buyer has enough money.
+6.. "Display items" -> displays all items that you have bought.
+
+The information should be saved into a file. 
+That means when you restart the information does not dissappear.
+
+Non-functonal:
+1. Try Service-oriented approach.
+2. Sensible console messages.
+
+
+Advanced:
+Try error handling with try/catch.
+
+
+-------------------------------------------------------------------------------
+
+1. Create a new Nunit project and try to cover your program with UnitTests.
+2. Create an interface for FileSaver and use Moq (mocking) to replace this dependency.
+3. Try to cover your commands with unit tests.
+4. Investigate how can you check code coverage of your tests.
