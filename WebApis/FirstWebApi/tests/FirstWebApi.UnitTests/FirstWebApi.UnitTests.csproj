@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FirstWebApi\FirstWebApi.csproj" />
+    <ProjectReference Include="..\..\src\FirstWebApi.ApiClients\FirstWebApi.ApiClients.csproj" />
+    <ProjectReference Include="..\..\src\FirstWebApi\FirstWebApi.csproj" />
   </ItemGroup>
 
 </Project>

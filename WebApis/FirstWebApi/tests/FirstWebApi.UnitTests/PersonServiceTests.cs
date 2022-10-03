@@ -19,6 +19,7 @@ namespace FirstWebApi.UnitTests
 
         private Mock<IPersonRepository> _personRepository;
         private Mock<IJsonPlaceholderApiClient> _jsonPlaceholderApiClient;
+        private Mock<IDateTimeService> _dateTimeService;
         private IMapper _mapper;
 
         [SetUp]
@@ -26,6 +27,7 @@ namespace FirstWebApi.UnitTests
         {
             _personRepository = new Mock<IPersonRepository>();
             _jsonPlaceholderApiClient = new Mock<IJsonPlaceholderApiClient>();
+            _dateTimeService = new Mock<IDateTimeService>();
 
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -34,7 +36,7 @@ namespace FirstWebApi.UnitTests
 
             _mapper = mappingConfig.CreateMapper();
 
-            _personService = new PersonService(_personRepository.Object, _jsonPlaceholderApiClient.Object, _mapper);
+            _personService = new PersonService(_personRepository.Object, _jsonPlaceholderApiClient.Object, _mapper, _dateTimeService.Object);
         }
 
         [Test]

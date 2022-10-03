@@ -13,12 +13,15 @@ namespace FirstWebApi.Services
         private readonly IPersonRepository _personRepository;
         private readonly IJsonPlaceholderApiClient _jsonPlaceholderApiClient;
         private readonly IMapper _mapper;
+        private readonly IDateTimeService _dateTimeService;
 
-        public PersonService(IPersonRepository personRepository, IJsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
+        public PersonService(IPersonRepository personRepository, IJsonPlaceholderApiClient jsonPlaceholderApiClient,
+            IMapper mapper, IDateTimeService dateTimeService)
         {
             _personRepository = personRepository;
             _jsonPlaceholderApiClient = jsonPlaceholderApiClient;
             _mapper = mapper;
+            _dateTimeService = dateTimeService;
         }
 
         private async Task<List<PlaceholderUser>> FetchDataAsync()
@@ -45,11 +48,8 @@ namespace FirstWebApi.Services
 
             var existingPerson = await GetById(updatePerson.Id);
 
-
             var entity = _mapper.Map<PersonEntity>(updatePerson);
-            entity.LastModifiedUtc = DateTime.UtcNow;
-
-
+            entity.LastModifiedUtc = _dateTimeService.GetNowUtc();
 
             await _personRepository.UpdateAsync(entity);
         }
