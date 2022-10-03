@@ -1,0 +1,13 @@
+1. Currency Rates History Api
+Dominykas Gečas
+Emilija Vaisvalavičiūtė
+Jukubas Keturakis
+Gustas Kononovas
+Marius Jasiunas
+
+2. Employee Expense Reports API
+Martynas Gedutis
+Arnas Bagocius
+Dovydas Čeponis
+Gintaras Armonaitis
+Gvidas Rimeikis

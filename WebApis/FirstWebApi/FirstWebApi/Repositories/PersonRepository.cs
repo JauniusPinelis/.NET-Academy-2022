@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace FirstWebApi.Repositories
 {
-    public class PersonRepository
+    public class PersonRepository : IPersonRepository
     {
         private readonly string _filePath = "persons.txt";
 
