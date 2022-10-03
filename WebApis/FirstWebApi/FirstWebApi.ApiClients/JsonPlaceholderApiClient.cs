@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 
 namespace FirstWebApi.ApiClients
 {
-    public class JsonPlaceholderApiClient
+    public class JsonPlaceholderApiClient : IJsonPlaceholderApiClient
     {
         private readonly string _baseUrl = "https://jsonplaceholder.typicode.com";
         private readonly string _apiKey = "random-api-key";

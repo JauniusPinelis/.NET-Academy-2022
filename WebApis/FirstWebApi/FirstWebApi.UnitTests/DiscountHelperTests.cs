@@ -40,7 +40,6 @@ namespace FirstWebApi.UnitTests
             Assert.AreEqual(0.05M, result);
         }
 
-        [Test]
         [TestCase(5, 0.05)]
         [TestCase(15, 0.10)]
         public void CalculateDiscount_GivenTestCases_WeLearnAboutTestCase(int price, decimal discount)

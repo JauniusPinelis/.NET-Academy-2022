@@ -11,10 +11,10 @@ namespace FirstWebApi.Services
     public class PersonService
     {
         private readonly IPersonRepository _personRepository;
-        private readonly JsonPlaceholderApiClient _jsonPlaceholderApiClient;
+        private readonly IJsonPlaceholderApiClient _jsonPlaceholderApiClient;
         private readonly IMapper _mapper;
 
-        public PersonService(IPersonRepository personRepository, JsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
+        public PersonService(IPersonRepository personRepository, IJsonPlaceholderApiClient jsonPlaceholderApiClient, IMapper mapper)
         {
             _personRepository = personRepository;
             _jsonPlaceholderApiClient = jsonPlaceholderApiClient;
@@ -34,19 +34,17 @@ namespace FirstWebApi.Services
             await _personRepository.AddAsync(entity);
         }
 
+
         public async Task UpdateAsync(int id, UpdatePerson updatePerson)
         {
+
             if (id != updatePerson.Id)
             {
                 throw new ArgumentException("Ids do not match");
             }
 
-            var existingPerson = GetById(updatePerson.Id);
+            var existingPerson = await GetById(updatePerson.Id);
 
-            if (updatePerson == null)
-            {
-                throw new NotFoundException();
-            }
 
             var entity = _mapper.Map<PersonEntity>(updatePerson);
             entity.LastModifiedUtc = DateTime.UtcNow;
@@ -69,13 +67,13 @@ namespace FirstWebApi.Services
         }
 
 
-        public Person GetById(int id)
+        public async Task<Person> GetById(int id)
         {
-            var entity = _personRepository.GetById(id);
+            var entity = await _personRepository.GetById(id);
 
             if (entity == null)
             {
-                throw new ArgumentNullException("person not found");
+                throw new NotFoundException();
             }
 
             return _mapper.Map<Person>(entity);
