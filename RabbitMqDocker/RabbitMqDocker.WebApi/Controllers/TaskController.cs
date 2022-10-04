@@ -20,7 +20,7 @@ namespace RabbitMqDocker.WebApi.Controllers
         {
             var task = new TaskCreated()
             {
-                Id = 1
+                Id = 32
             };
 
             await _messagePublisher.Publish(task);

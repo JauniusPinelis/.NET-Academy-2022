@@ -12,7 +12,7 @@ namespace RabbitMqDocker.Messaging.Extensions
             {
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
                 {
-                    config.Host(new Uri("rabbitmq://localhost"), h =>
+                    config.Host("rabbitmq", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");

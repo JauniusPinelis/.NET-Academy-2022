@@ -6,6 +6,18 @@ services:
     build:
       context: .
       dockerfile: RabbitMqDocker.WebApi/Dockerfile
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+
+  rabbitmqdocker.consumer:
+    image: ${DOCKER_REGISTRY-}rabbitmqdockerconsumer
+    build:
+      context: .
+      dockerfile: RabbitMqDocker.Consumer/Dockerfile
+    restart: on-failure
+    depends_on:
+      - rabbitmq
 
   rabbitmq: # login guest:guest
     image: rabbitmq:3-management
@@ -19,3 +31,8 @@ services:
     - "25672:25672"
     - "15671:15671"
     - "15672:15672"
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
