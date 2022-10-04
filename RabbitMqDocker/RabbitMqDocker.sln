@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqDocker.WebApi", "RabbitMqDocker.WebApi\RabbitMqDocker.WebApi.csproj", "{26AAA8AE-BBDD-48FC-9A3D-9D2E91CFD207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqDocker.WebApi", "RabbitMqDocker.WebApi\RabbitMqDocker.WebApi.csproj", "{26AAA8AE-BBDD-48FC-9A3D-9D2E91CFD207}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CE98E1BF-CD3F-4B05-AFB3-D301AB4142B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqDocker.Messaging", "RabbitMqDocker.Messaging\RabbitMqDocker.Messaging.csproj", "{8C77DB20-9E33-4B94-B119-3EA6E38499EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqDocker.Consumer", "RabbitMqDocker.Consumer\RabbitMqDocker.Consumer.csproj", "{D6E149E6-721D-49FB-83DD-F86E22C8832C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{CE98E1BF-CD3F-4B05-AFB3-D301AB4142B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE98E1BF-CD3F-4B05-AFB3-D301AB4142B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE98E1BF-CD3F-4B05-AFB3-D301AB4142B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C77DB20-9E33-4B94-B119-3EA6E38499EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C77DB20-9E33-4B94-B119-3EA6E38499EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C77DB20-9E33-4B94-B119-3EA6E38499EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C77DB20-9E33-4B94-B119-3EA6E38499EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E149E6-721D-49FB-83DD-F86E22C8832C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E149E6-721D-49FB-83DD-F86E22C8832C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E149E6-721D-49FB-83DD-F86E22C8832C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E149E6-721D-49FB-83DD-F86E22C8832C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
