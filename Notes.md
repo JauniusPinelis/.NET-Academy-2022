@@ -110,3 +110,17 @@ https://www.postgresql.org/docs/current/tutorial-transactions.html
 3. Autofixture
 
 4. src vs tests folders
+
+
+### Day 2
+
+1. Docker with .NET
+https://docs.docker.com/samples/dotnetcore/
+
+2. Docker Orchestrator with docker-compose
+https://medium.com/trimble-maps-engineering-blog/getting-started-with-net-core-docker-and-rabbitmq-part-3-66305dc50ccf
+
+3. RabbitMq
+
+4. MassTransit
+https://masstransit-project.com/
