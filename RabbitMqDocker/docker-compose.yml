@@ -9,6 +9,9 @@ services:
     restart: on-failure
     depends_on:
       - rabbitmq
+      - postgres
+    networks:
+      - aspnetcoreapp-network
 
   rabbitmqdocker.consumer:
     image: ${DOCKER_REGISTRY-}rabbitmqdockerconsumer
@@ -36,3 +39,18 @@ services:
       interval: 10s
       timeout: 10s
       retries: 5
+
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    ports:
+       - 5432:5432
+    environment:
+      # change this for a "real" app!
+      POSTGRES_PASSWORD: password
+    networks:
+      - aspnetcoreapp-network
+
+networks:
+  aspnetcoreapp-network:
+    driver: bridge

@@ -9,7 +9,7 @@ namespace RabbitMqDocker.Consumer
         public override Task Consume(ConsumeContext<TaskCreated> context)
         {
             var test = context.Message;
-            return Task.CompletedTask;
+            throw new Exception();
         }
     }
 }
