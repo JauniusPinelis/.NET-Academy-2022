@@ -10,8 +10,6 @@ services:
     depends_on:
       - rabbitmq
       - postgres
-    networks:
-      - aspnetcoreapp-network
 
   rabbitmqdocker.consumer:
     image: ${DOCKER_REGISTRY-}rabbitmqdockerconsumer
@@ -48,9 +46,3 @@ services:
     environment:
       # change this for a "real" app!
       POSTGRES_PASSWORD: password
-    networks:
-      - aspnetcoreapp-network
-
-networks:
-  aspnetcoreapp-network:
-    driver: bridge

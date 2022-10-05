@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RabbitMqDocker.Messaging\RabbitMqDocker.Messaging.csproj" />
+    <ProjectReference Include="..\src\RabbitMqDocker.Repositories\RabbitMqDocker.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RabbitMqDocker.Messaging;
 using RabbitMqDocker.Messaging.Contracts;
+using RabbitMqDocker.Repositories;
 
 namespace RabbitMqDocker.WebApi.Controllers
 {
@@ -9,10 +10,18 @@ namespace RabbitMqDocker.WebApi.Controllers
     public class TaskController : ControllerBase
     {
         private readonly IMessagePublisher _messagePublisher;
+        private readonly TaskRepository _taskRepository;
 
-        public TaskController(IMessagePublisher messagePublisher)
+        public TaskController(IMessagePublisher messagePublisher, TaskRepository taskRepository)
         {
             _messagePublisher = messagePublisher;
+            _taskRepository = taskRepository;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _taskRepository.GetAllAsync());
         }
 
         [HttpPost]

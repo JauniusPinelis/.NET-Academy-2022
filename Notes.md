@@ -126,3 +126,6 @@ https://medium.com/trimble-maps-engineering-blog/getting-started-with-net-core-d
 https://masstransit-project.com/
 
 ### Day 3
+
+1. Postgre Docker:
+https://medium.com/codex/how-to-persist-and-backup-data-of-a-postgresql-docker-container-9fe269ff4334
