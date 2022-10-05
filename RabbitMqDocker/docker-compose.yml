@@ -46,3 +46,5 @@ services:
     environment:
       # change this for a "real" app!
       POSTGRES_PASSWORD: password
+    volumes:
+       - ./data:/var/lib/postgresql/data
