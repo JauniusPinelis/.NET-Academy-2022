@@ -129,3 +129,12 @@ https://masstransit-project.com/
 
 1. Postgre Docker:
 https://medium.com/codex/how-to-persist-and-backup-data-of-a-postgresql-docker-container-9fe269ff4334
+
+2. Swagger documentation 
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio
+
+3. Good api documentation example.
+https://stripe.com/docs/api 
+
+4. Api Versioning
+https://code-maze.com/aspnetcore-api-versioning/
