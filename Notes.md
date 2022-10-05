@@ -124,3 +124,5 @@ https://medium.com/trimble-maps-engineering-blog/getting-started-with-net-core-d
 
 4. MassTransit
 https://masstransit-project.com/
+
+### Day 3

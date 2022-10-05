@@ -12,9 +12,14 @@ var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
         h.Password("guest");
     });
 
-    cfg.ReceiveEndpoint("order-created-event", e =>
+    cfg.ReceiveEndpoint("task-created-queue", e =>
     {
         e.Consumer<TaskCreatedMessageHandler>();
+    });
+
+    cfg.ReceiveEndpoint("task-updated-queue", e =>
+    {
+        e.Consumer<TaskUpdatedMessageHandler>();
     });
 });
 
