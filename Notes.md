@@ -148,3 +148,5 @@ https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnet
 
 https://medium.com/@daniel.edwards_82928/using-webapplicationfactory-with-nunit-817a616e26f9
 
+2. Ef core.
+
