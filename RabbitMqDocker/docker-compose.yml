@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}rabbitmqdockerwebapi
     build:
       context: .
-      dockerfile: RabbitMqDocker.WebApi/Dockerfile
+      dockerfile: src/RabbitMqDocker.WebApi/Dockerfile
     restart: on-failure
     depends_on:
       - rabbitmq
@@ -15,7 +15,7 @@ services:
     image: ${DOCKER_REGISTRY-}rabbitmqdockerconsumer
     build:
       context: .
-      dockerfile: RabbitMqDocker.Consumer/Dockerfile
+      dockerfile: src/RabbitMqDocker.Consumer/Dockerfile
     restart: on-failure
     depends_on:
       - rabbitmq

@@ -138,3 +138,13 @@ https://stripe.com/docs/api
 
 4. Api Versioning
 https://code-maze.com/aspnetcore-api-versioning/
+
+
+### Day 4
+
+1. Integration Tests intro
+
+https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0
+
+https://medium.com/@daniel.edwards_82928/using-webapplicationfactory-with-nunit-817a616e26f9
+
