@@ -150,3 +150,5 @@ https://medium.com/@daniel.edwards_82928/using-webapplicationfactory-with-nunit-
 
 2. Ef core.
 
+3. Query parameters https://code-maze.com/filtering-aspnet-core-webapi/
+
