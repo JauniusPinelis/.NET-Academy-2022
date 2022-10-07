@@ -152,3 +152,16 @@ https://medium.com/@daniel.edwards_82928/using-webapplicationfactory-with-nunit-
 
 3. Query parameters https://code-maze.com/filtering-aspnet-core-webapi/
 
+### Day 5
+
+1. Docker images
+https://stackoverflow.com/questions/70521766/visual-studio-generated-dockerfile-does-not-work-with-manual-docker-build
+
+2. Transient, Scoped, Singleton
+https://stackoverflow.com/questions/45810851/cannot-consume-scoped-service-imongodbcontext-from-singleton-iactiveusersservice
+
+3. BackgroundServices
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-6.0&tabs=visual-studio
+
+4. Reading from Appsettings
+https://code-maze.com/aspnetcore-read-appsettings-values-from-a-json-file/
