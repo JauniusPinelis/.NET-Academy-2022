@@ -165,3 +165,15 @@ https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?
 
 4. Reading from Appsettings
 https://code-maze.com/aspnetcore-read-appsettings-values-from-a-json-file/
+
+
+## Week 4
+
+### Day 1
+
+1. Power of reflection.
+
+### Day 2
+
+1. Api-key authentication 
+https://www.codeproject.com/Articles/5287482/Secure-ASP-NET-Core-Web-API-using-API-Key-Authenti

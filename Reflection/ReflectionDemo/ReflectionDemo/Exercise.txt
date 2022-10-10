@@ -1,0 +1,4 @@
+﻿I want to implement a discount:
+1. If Name == "Free", I want to the item price to be 0.
+2. If Quantity is more than 20, apply 30% percent discount.
+3  If Quantity is more than 10, apply 10% percent discount.
