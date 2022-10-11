@@ -1,4 +1,7 @@
+using KubernetesTestApi.Attributes;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 
 namespace KubernetesTestApi.Controllers
 {
@@ -12,22 +15,38 @@ namespace KubernetesTestApi.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IMemoryCache _memoryCache;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IMemoryCache memoryCache)
         {
             _logger = logger;
+            _memoryCache = memoryCache;
         }
 
+        [ApiKey]
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get(DateTime date)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var convertedDate = date.Date.ToString();
+            _memoryCache.TryGetValue(convertedDate, out object cacheResult);
+
+            if (cacheResult != null)
+            {
+                var cacheData = JsonConvert.DeserializeObject<List<WeatherForecast>>(cacheResult.ToString());
+                return cacheData;
+            }
+
+            var data = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+
+            _memoryCache.Set(convertedDate, JsonConvert.SerializeObject(data));
+
+            return data;
         }
     }
 }
