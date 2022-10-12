@@ -175,5 +175,18 @@ https://code-maze.com/aspnetcore-read-appsettings-values-from-a-json-file/
 
 ### Day 2
 
-1. Api-key authentication 
+1. Kubernetes
+https://www.dotnetcurry.com/aspnet-core/kubernetes-for-developers
+https://manjit28.medium.com/powershell-define-shortcut-alias-for-common-kubernetes-commands-1c006d68cce2
+
+2. Semantic versioning:
+https://semver.org/
+
+3. Change Directory in Github actions
+   https://stackoverflow.com/questions/58139175/running-actions-in-another-directory
+
+4. Api-key authentication 
 https://www.codeproject.com/Articles/5287482/Secure-ASP-NET-Core-Web-API-using-API-Key-Authenti
+
+5. MemoryCaching:
+https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/

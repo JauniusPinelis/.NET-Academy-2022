@@ -39,7 +39,7 @@ spec:
  type: NodePort 
  ports:
     - port: 80
-      targetPort: 80
+      nodePort: 32080
       protocol: TCP
  selector:
    app: kubernetes-test-api
