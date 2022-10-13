@@ -1,20 +1,5 @@
 Teams:
 
-Arnas Bagocius ++ 
-Gintaras Armonaitis ++ 
-
-Dominykas Gečas 
-Emilija Vaisvalavičiūtė
-
-Dovydas Čeponis ++
-Gustas Kononovas ++ 
-
-Jukubas Keturakis
-Gvidas Rimeikis
-
-Marius Jasiunas +++
-Martynas Gedutis +++ 
-
 Exercise:
 You will create an backend API for banking system:
 
