@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ReflectionDemo;
 using ReflectionDemo.DiscountStrategies;
+using ReflectionDemo.Models;
+using ReflectionDemo.Repositories;
 
 Console.WriteLine("Hello, World!");
 
@@ -22,10 +24,10 @@ persons.Add(new Person()
     Age = 33
 });
 
-foreach (Person person in persons)
-{
-    Console.WriteLine(person);
-}
+//foreach (Person person in persons)
+//{
+//    Console.WriteLine(person);
+//}
 
 
 //----------------------------------------------
@@ -50,7 +52,7 @@ var selectedStrategy = discountStrategies.FirstOrDefault(d => d.Applies(shop));
 
 shop.Price = shop.Price * (1 - selectedStrategy.CalculateDiscount());
 
-Console.WriteLine(shop);
+//Console.WriteLine(shop);
 
 
 //if (shop.Name == "Free")
@@ -65,3 +67,57 @@ Console.WriteLine(shop);
 //{
 //    shop.Price = shop.Price * 0.8M;
 //}
+
+
+// initialising objects
+
+var pointModelRepository = new PointModelRepository();
+
+PointModel point = await pointModelRepository.Get(1, 2);
+
+Console.WriteLine(point);
+
+
+// Comparing object
+
+var x = 0;
+var y = 0;
+
+//Console.WriteLine(x == y);
+
+PointModel point1 = new()
+{
+    X = x,
+    Y = y
+};
+
+PointModel point2 = new()
+{
+    X = x,
+    Y = y
+};
+
+point2.X = 6;
+
+PointModel point3 = point1;
+
+PointModel point4 = new PointModel
+{
+    X = point1.X,
+    Y = point1.Y,
+};
+
+PointModel point5 = new PointModel();
+
+point5 = point1;
+
+
+
+//point1.X = 5;
+
+//Console.WriteLine(point1.X == point2.X && point1.Y == point2.Y);
+
+Console.WriteLine(point1 == point2);
+//Console.WriteLine(point1.Equals(point3));
+
+//Console.WriteLine(point1.Equals(point5));

@@ -28,45 +28,50 @@ namespace GildedRoseKata
                 {
                     item.Quality++;
 
-                    if (item.Name == "Backstage passes to a TAFKAL80ETC concert" && item.Quality < 50)
+
+                }
+
+                if (item.Name == "Backstage passes to a TAFKAL80ETC concert" && item.Quality < 50)
+                {
+
+                    if (item.SellIn < 11)
                     {
-
-                        if (item.SellIn < 11)
-                        {
-                            item.Quality++;
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            item.Quality++;
-                        }
-
+                        item.Quality++;
                     }
+
+                    if (item.SellIn < 6)
+                    {
+                        item.Quality++;
+                    }
+
+                    if (item.SellIn < 0)
+                    {
+                    }
+
                 }
 
                 item.SellIn--;
 
-                if (item.SellIn < 0)
+                if (item.Name == "Aged Brie" && item.SellIn < 0)
                 {
-                    if (item.Name == "Aged Brie")
+                    if (item.Quality < 50)
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality++;
-                        }
+                        item.Quality++;
                     }
-                    else
-                    {
-                        if (item.Name != "Backstage passes to a TAFKAL80ETC concert" && item.Quality > 0)
-                        {
-                            item.Quality--;
-                        }
-                        else
-                        {
-                            item.Quality = 0;
-                        }
-                    }
+                    continue;
                 }
+
+                if ((item.SellIn < 0 && item.Name == "Backstage passes to a TAFKAL80ETC concert") || item.Quality <= 0)
+                {
+                    item.Quality = 0;
+                }
+                else
+                {
+
+                    item.Quality--;
+                }
+
+
             }
         }
     }
