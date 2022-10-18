@@ -121,3 +121,37 @@ Console.WriteLine(point1 == point2);
 //Console.WriteLine(point1.Equals(point3));
 
 //Console.WriteLine(point1.Equals(point5));
+
+// --------------------- Pass by value or passed by reference
+
+PointModel pointModel = new PointModel
+{
+    X = 0,
+    Y = 0
+};
+
+
+pointModelRepository.UpdatePoints(ref x, ref y);
+
+Console.WriteLine(pointModel);
+
+pointModelRepository.UpdatePoints(pointModel);
+
+var updatedPoints = pointModelRepository.GetUpdatedPoints();
+
+pointModel.X = updatedPoints.Item1;
+pointModel.Y = updatedPoints.Item2;
+
+
+Console.WriteLine(pointModel);
+
+IEnumerable<string> names = new string[] { "names" };
+
+names = names.Where(x => x.Length > 5);
+
+names = names.Where(x => x.Length > 10);
+
+var executedResult = names.ToList();
+
+
+
