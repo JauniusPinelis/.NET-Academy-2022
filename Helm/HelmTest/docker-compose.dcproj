@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>ce98e1bf-cd3f-4b05-afb3-d301ab4142b0</ProjectGuid>
+    <ProjectGuid>6a94f972-3850-4002-bb2f-f73116b0ee5b</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>rabbitmqdocker.webapi</DockerServiceName>
+    <DockerServiceName>helmtest</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.yml" />

@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: src/RabbitMqDocker.WebApi/Dockerfile
     restart: on-failure
+    ports: 
+    - 3022:80
     depends_on:
       - rabbitmq
       - postgres
@@ -16,6 +18,8 @@ services:
     build:
       context: .
       dockerfile: src/RabbitMqDocker.Consumer/Dockerfile
+    ports: 
+    - 3023:80
     restart: on-failure
     depends_on:
       - rabbitmq

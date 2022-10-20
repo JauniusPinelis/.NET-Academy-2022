@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  helmtest:
+    image: jauniuspinelis1/helmtest:dev1
+    pull_policy: always
+    ports: 
+      - "5901:80"

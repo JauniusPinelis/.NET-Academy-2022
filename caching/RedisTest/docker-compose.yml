@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  redistest:
+    image: ${DOCKER_REGISTRY-}redistest
+    build:
+      context: .
+      dockerfile: RedisTest/Dockerfile
+    depends_on:
+      - "redis_image"
+
+  redis_image:
+    # Pull the image from Docker Hub
+    image: redis
+
+    # Give the container a name (any name you want)
+    container_name: redis.cache
+    ports:
+      - "6379:6379"
+
+  redis-insights:
+     image: redislabs/redisinsight:latest
+     ports:
+      - 8001:8001

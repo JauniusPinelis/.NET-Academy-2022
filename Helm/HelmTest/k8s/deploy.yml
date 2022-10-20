@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-test-api
+  labels:
+    app: helm-test-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helm-test-api
+  template:
+    metadata:
+      labels:
+        app: helm-test-api
+    spec:
+      containers:
+      - name: helm-test-api
+        image: jauniuspinelis1/helmtest:dev1
+        imagePullPolicy: Always
+        ports:
+            - containerPort: 80
+              protocol: TCP
+        resources:
+          requests:
+            cpu: 200m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
