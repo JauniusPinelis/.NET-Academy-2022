@@ -191,6 +191,26 @@ https://www.codeproject.com/Articles/5287482/Secure-ASP-NET-Core-Web-API-using-A
 5. MemoryCaching:
 https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
 
-## Week 5:
+## Week 5
 
-1.  SOLID, DRY, database-centric architectures
+### Day 1
+
+   1. SOLID, DRY, database-centric architectures
+
+### Day 3
+
+   1. Authentication, Authorization
+
+### Day 4
+
+   1. DistributedCaching, Redis Cache, Redis Insights
+
+### Week 6
+
+### Day 1
+
+1.  Break.
+
+### Day 2
+
+1. Authentication: Registration Demo

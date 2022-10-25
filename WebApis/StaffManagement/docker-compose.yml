@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  staffmanagement.webapi:
+    image: ${DOCKER_REGISTRY-}staffmanagementwebapi
+    ports: 
+      - 5001:80
+    build:
+      context: .
+      dockerfile: StaffManagement.WebApi/Dockerfile
+    depends_on:
+       - "postgresdb"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  postgresdb:
+     image: postgres
+     ports:
+       - 5000:5432
+     environment:
+         POSTGRES_PASSWORD: testing123
+     volumes:
+       - ./data:/var/lib/postgresql/data
