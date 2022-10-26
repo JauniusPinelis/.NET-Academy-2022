@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using StaffManagement.WebApi.Dtos;
 using StaffManagement.WebApi.Entities;
 using StaffManagement.WebApi.Services;
+using System.Security.Claims;
 
 namespace StaffManagement.WebApi.Controllers
 {
@@ -63,11 +64,32 @@ namespace StaffManagement.WebApi.Controllers
             return Ok(new { Token = token });
         }
 
-        [Authorize]
+        [Authorize(Policy = "user")]
         [HttpGet("data")]
-        public IActionResult Logout()
+        public IActionResult Data()
         {
-            return NoContent();
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+
+                return Ok(identity.Claims.ToDictionary(x => x.Type, x => x.Value));
+            }
+
+            return BadRequest();
+        }
+
+        [Authorize(Policy = "Admin")]
+        [HttpGet("admin-data")]
+        public IActionResult AdminData()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+
+                return Ok(identity.Claims.ToDictionary(x => x.Type, x => x.Value));
+            }
+
+            return BadRequest();
         }
     }
 }

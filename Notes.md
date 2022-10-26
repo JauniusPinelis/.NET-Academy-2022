@@ -214,3 +214,9 @@ https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
 ### Day 2
 
 1. Authentication: Registration Demo
+
+### Day 3
+
+1. Cors explained
+2. Creating and Validating JWT.
+3. Claims explained

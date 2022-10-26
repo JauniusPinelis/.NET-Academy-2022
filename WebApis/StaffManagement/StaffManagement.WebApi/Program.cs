@@ -34,11 +34,24 @@ builder.Services.AddAuthentication(opt =>
 })
     .AddJwtBearer(options =>
     {
+        options.RequireHttpsMetadata = false;
+
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("jwt:Secretkey")))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("jwt:Secretkey"))),
+            ValidateIssuerSigningKey = false,
+            ValidateAudience = false,
+            ValidateIssuer = false,
         };
     });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("User",
+          policy => policy.RequireClaim("User"));
+    options.AddPolicy("Admin",
+         policy => policy.RequireClaim("Roles", "Admin"));
+});
 
 builder.Services.AddCors(options =>
 {

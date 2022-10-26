@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using StaffManagement.WebApi.Configurations;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace StaffManagement.WebApi.Services
@@ -17,11 +18,18 @@ namespace StaffManagement.WebApi.Services
 
         public string GenerateToken()
         {
+            var claims = new List<Claim> {
+                new Claim("UserName", "joey"),
+                new Claim("Email", "xxx@test.com"),
+                new Claim("Roles", "Admin")
+            };
+
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfiguration.SecretKey));
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
             var tokenOptions = new JwtSecurityToken(
                 expires: DateTime.Now.AddMinutes(60),
-                signingCredentials: signinCredentials
+                signingCredentials: signinCredentials,
+                claims: claims
             );
 
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
