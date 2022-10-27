@@ -1,4 +1,4 @@
-﻿namespace StaffManagement.WebApi.Configurations
+﻿namespace StaffManagement.Services.Configurations
 {
     public class JwtConfiguration
     {

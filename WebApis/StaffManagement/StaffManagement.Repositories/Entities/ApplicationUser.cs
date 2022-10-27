@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace StaffManagement.WebApi.Entities
+namespace StaffManagement.Repositories.Entities
 {
     public class ApplicationUser : IdentityUser
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using StaffManagement.Repositories.Entities;
+using StaffManagement.Services.Services;
 using StaffManagement.WebApi.Dtos;
-using StaffManagement.WebApi.Entities;
-using StaffManagement.WebApi.Services;
 using System.Security.Claims;
 
 namespace StaffManagement.WebApi.Controllers

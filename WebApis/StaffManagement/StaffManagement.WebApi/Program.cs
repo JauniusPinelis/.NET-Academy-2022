@@ -1,12 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using StaffManagement.WebApi;
-using StaffManagement.WebApi.Configurations;
-using StaffManagement.WebApi.Entities;
-using StaffManagement.WebApi.Services;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,52 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<DataContext>()
-        .AddDefaultTokenProviders();
-
-builder.Services.AddTransient<JwtService>();
-
-var defaultConnection = builder.Configuration.GetConnectionString("Default");
-
-builder.Services.Configure<JwtConfiguration>(builder.Configuration.GetSection("jwt"));
-
-builder.Services.AddAuthentication(opt =>
-{
-    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-    .AddJwtBearer(options =>
-    {
-        options.RequireHttpsMetadata = false;
-
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("jwt:Secretkey"))),
-            ValidateIssuerSigningKey = false,
-            ValidateAudience = false,
-            ValidateIssuer = false,
-        };
-    });
-
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("User",
-          policy => policy.RequireClaim("User"));
-    options.AddPolicy("Admin",
-         policy => policy.RequireClaim("Roles", "Admin"));
-});
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "AllowAll",
-                      policy =>
-                      {
-                          policy.AllowAnyHeader().AllowAnyOrigin();
-                      });
-});
-
-builder.Services.AddDbContext<DataContext>(x => x.UseNpgsql(defaultConnection));
+builder.Services.ConfigureApplication(builder.Configuration);
 
 var app = builder.Build();
 

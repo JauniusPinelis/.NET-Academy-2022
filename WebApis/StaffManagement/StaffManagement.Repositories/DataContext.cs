@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StaffManagement.WebApi.Entities;
+using StaffManagement.Repositories.Entities;
 
-namespace StaffManagement.WebApi
+namespace StaffManagement.Repositories
 {
     public class DataContext : IdentityDbContext<ApplicationUser>
     {

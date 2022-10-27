@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using StaffManagement.WebApi.Configurations;
+using StaffManagement.Services.Configurations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace StaffManagement.WebApi.Services
+namespace StaffManagement.Services.Services
 {
     public class JwtService
     {
