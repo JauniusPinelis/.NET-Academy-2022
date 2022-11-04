@@ -1,6 +1,6 @@
-﻿namespace StaffManagement.WebApi.Dtos
+﻿namespace StaffManagement.Services.Dtos
 {
-    public class CreateUserDto
+    public class LoginUserDto
     {
         public string Username { get; set; }
 

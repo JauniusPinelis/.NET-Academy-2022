@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-    kubernetes-test-api:
-        container_name: kubernetes-test-api
+    kubernetes-test-api-image:
+        container_name: kubernetes-test-api2
         build: KubernetesTestApi/
         restart: always
         ports:
-          - 80:80
+          - 3002:80

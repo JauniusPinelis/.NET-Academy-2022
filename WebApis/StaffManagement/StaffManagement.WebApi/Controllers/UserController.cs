@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StaffManagement.Repositories.Entities;
+using StaffManagement.Services.Dtos;
 using StaffManagement.Services.Services;
-using StaffManagement.WebApi.Dtos;
 using System.Security.Claims;
 
 namespace StaffManagement.WebApi.Controllers
@@ -14,11 +14,13 @@ namespace StaffManagement.WebApi.Controllers
     {
         private UserManager<ApplicationUser> _userManager;
         private readonly JwtService _jwtService;
+        private readonly ApiKeyService _apiKeyService;
 
-        public UserController(UserManager<ApplicationUser> userManager, JwtService jwtService)
+        public UserController(UserManager<ApplicationUser> userManager, JwtService jwtService, ApiKeyService apiKeyService)
         {
             _userManager = userManager;
             _jwtService = jwtService;
+            _apiKeyService = apiKeyService;
         }
 
         /// <summary>
@@ -64,6 +66,12 @@ namespace StaffManagement.WebApi.Controllers
             return Ok(new { Token = token });
         }
 
+        [HttpPost("{userId}/upload-data")]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            return Ok();
+        }
+
         [Authorize(Policy = "user")]
         [HttpGet("data")]
         public IActionResult Data()
@@ -79,17 +87,21 @@ namespace StaffManagement.WebApi.Controllers
         }
 
         [Authorize(Policy = "Admin")]
-        [HttpGet("admin-data")]
-        public IActionResult AdminData()
+        [HttpPost("admin-data")]
+        public IActionResult AdminData(CreateApiKey createApiKey)
         {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            if (identity != null)
-            {
+            //var identity = HttpContext.User.Identity as ClaimsIdentity;
+            //if (identity != null)
+            //{
 
-                return Ok(identity.Claims.ToDictionary(x => x.Type, x => x.Value));
-            }
+            //    return Ok(identity.Claims.ToDictionary(x => x.Type, x => x.Value));
+            //}
 
-            return BadRequest();
+            //return BadRequest();
+
+            _apiKeyService.CreateApiKey(createApiKey.UserId);
+
+            return StatusCode(201);
         }
     }
 }

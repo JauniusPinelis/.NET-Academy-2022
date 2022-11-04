@@ -42,6 +42,7 @@ namespace StaffManagement.WebApi
             services.Configure<JwtConfiguration>(configuration.GetSection("jwt"));
 
             services.AddTransient<JwtService>();
+            services.AddTransient<ApiKeyService>();
 
             return services;
         }

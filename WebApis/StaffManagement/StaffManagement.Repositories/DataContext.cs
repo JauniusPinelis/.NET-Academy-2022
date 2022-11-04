@@ -6,6 +6,8 @@ namespace StaffManagement.Repositories
 {
     public class DataContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<UserApiKey> ApiKeys { get; set; }
+
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 

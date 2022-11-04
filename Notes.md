@@ -220,3 +220,8 @@ https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
 1. Cors explained
 2. Creating and Validating JWT.
 3. Claims explained
+
+### Day 4 
+
+1. Refactoring
+2. File upload
