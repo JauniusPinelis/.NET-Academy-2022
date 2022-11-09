@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6197E0AD-D9D0-4C82-9728-AC301C89254B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A47C6F04-2BAB-4D3C-8772-74F2512D2E0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareManagement.WebApi", "src\SquareManagement.WebApi\SquareManagement.WebApi.csproj", "{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareManagement.Services", "src\SquareManagement.Services\SquareManagement.Services.csproj", "{10686005-2D4E-4784-B287-7882FE8C934B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareManagement.Repositories", "SquareManagement.Repositories\SquareManagement.Repositories.csproj", "{8DB5B3C4-E627-4C5A-BF76-537F1FB85806}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareManagement.Core", "src\SquareManagement.Core\SquareManagement.Core.csproj", "{0BFD442D-FD9A-4387-9292-C1F59B112D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareManagement.DatabaseUpdater", "src\SquareManagement.DatabaseUpdater\SquareManagement.DatabaseUpdater.csproj", "{F1AFF6BA-F285-425C-880A-093557C6587C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10686005-2D4E-4784-B287-7882FE8C934B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10686005-2D4E-4784-B287-7882FE8C934B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10686005-2D4E-4784-B287-7882FE8C934B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10686005-2D4E-4784-B287-7882FE8C934B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB5B3C4-E627-4C5A-BF76-537F1FB85806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB5B3C4-E627-4C5A-BF76-537F1FB85806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB5B3C4-E627-4C5A-BF76-537F1FB85806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB5B3C4-E627-4C5A-BF76-537F1FB85806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BFD442D-FD9A-4387-9292-C1F59B112D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFD442D-FD9A-4387-9292-C1F59B112D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFD442D-FD9A-4387-9292-C1F59B112D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFD442D-FD9A-4387-9292-C1F59B112D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1AFF6BA-F285-425C-880A-093557C6587C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1AFF6BA-F285-425C-880A-093557C6587C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1AFF6BA-F285-425C-880A-093557C6587C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1AFF6BA-F285-425C-880A-093557C6587C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EAA6001-8FC1-41ED-BF2B-5ECA25EE71A7} = {6197E0AD-D9D0-4C82-9728-AC301C89254B}
+		{10686005-2D4E-4784-B287-7882FE8C934B} = {6197E0AD-D9D0-4C82-9728-AC301C89254B}
+		{8DB5B3C4-E627-4C5A-BF76-537F1FB85806} = {6197E0AD-D9D0-4C82-9728-AC301C89254B}
+		{0BFD442D-FD9A-4387-9292-C1F59B112D9A} = {6197E0AD-D9D0-4C82-9728-AC301C89254B}
+		{F1AFF6BA-F285-425C-880A-093557C6587C} = {6197E0AD-D9D0-4C82-9728-AC301C89254B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2401F94-A062-4A9D-B5E3-777500EB5B47}
+	EndGlobalSection
+EndGlobal

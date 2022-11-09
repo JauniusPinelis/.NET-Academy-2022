@@ -6,7 +6,7 @@ namespace Revision.Services
     {
 
 
-        public void Import(string url)
+        public void Import(string url, int age, int type = 5)
         {
             string state = "";
             // write code which trims url

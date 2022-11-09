@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 
 FileService fileService = new();
 
-fileService.Import("");
+fileService.Import("", 6);
 
 var dateTime = DateTime.UtcNow;
 var dateTime2 = DateTime.Now;
