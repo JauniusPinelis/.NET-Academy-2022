@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SquareManagement.Repositories.Extensions;
+using SquareManagement.Services.MappingProfiles;
 using SquareManagement.Services.Services;
 
 namespace SquareManagement.Services
@@ -12,6 +13,7 @@ namespace SquareManagement.Services
 
             services.AddRepositories(configuration);
 
+            services.AddAutoMapper(typeof(MainMappingProfile));
             services.AddTransient<PointListService>();
         }
     }

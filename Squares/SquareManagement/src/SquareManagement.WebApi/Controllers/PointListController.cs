@@ -15,10 +15,19 @@ public class PointListController : ControllerBase
         _pointListService = pointListService;
     }
 
+    [HttpPost]
     public async Task<IActionResult> Create(CreatePointList createPointList)
     {
-        await _pointListService.Create(createPointList);
+        var pointListCreated = await _pointListService.Create(createPointList);
 
-        return StatusCode(201);
+        return StatusCode(201, pointListCreated);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Remove(int id)
+    {
+        await _pointListService.Remove(id);
+
+        return NoContent();
     }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,12 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="dbup-postgresql" Version="4.6.3" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Remove="Scripts\Script0001.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Script0001.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Scripts\" />
+		<PackageReference Include="dbup-postgresql" Version="4.6.3" />
 	</ItemGroup>
 
 </Project>

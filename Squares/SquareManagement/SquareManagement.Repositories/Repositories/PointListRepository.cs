@@ -14,9 +14,19 @@ namespace SquareManagement.Repositories.Repositories
             _connection = connection;
         }
 
-        public async Task<int> Insert(PointList pointList)
+        public async Task<PointList> Get(int id)
         {
-            string insertQuery = @"INSERT INTO [dbo].[point_lists]([Name]) VALUES (@Name)";
+            string selectQuery = @"select * from public.pointlists where Id = @Id";
+
+            return await _connection.QueryFirstAsync<PointList>(selectQuery, new
+            {
+                id
+            });
+        }
+
+        public async Task<int> Create(PointList pointList)
+        {
+            string insertQuery = SqlConstants.InsertPointListCommand;
 
             var createdId = await _connection.ExecuteAsync(insertQuery, new
             {
@@ -24,6 +34,16 @@ namespace SquareManagement.Repositories.Repositories
             });
 
             return createdId;
+        }
+
+        public async Task Remove(int id)
+        {
+            string removeQuery = @"remove from public.pointlists where Id = @Id";
+
+            await _connection.ExecuteAsync(removeQuery, new
+            {
+                id
+            });
         }
     }
 }

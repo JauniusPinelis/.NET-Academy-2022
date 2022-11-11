@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
+using SquareManagement.Core.Interfaces;
 using SquareManagement.Repositories.Repositories;
 
 namespace SquareManagement.Repositories.Extensions
@@ -13,7 +14,9 @@ namespace SquareManagement.Repositories.Extensions
 
             services.AddTransient((sp) => new NpgsqlConnection(connectionString));
 
-            services.AddTransient<PointListRepository>();
+            services.AddTransient<IPointListRepository, PointListRepository>();
+
+            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
         }
     }
 }
