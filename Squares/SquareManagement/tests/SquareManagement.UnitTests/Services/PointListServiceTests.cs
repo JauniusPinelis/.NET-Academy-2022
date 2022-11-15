@@ -41,11 +41,11 @@ namespace SquareManagement.UnitTests.Services
 
             created.Should().NotBeNull();
 
-            _pointListRepository.Verify(mock => mock.Create(It.IsAny<PointList>()), Times.Once());
+            _pointListRepository.Verify(mock => mock.Create(It.IsAny<PointListModel>()), Times.Once());
         }
 
         [Test, AutoData]
-        public async Task Remove_GivenValidId_RepositoryRemoveIsCalled(PointList pointList)
+        public async Task Remove_GivenValidId_RepositoryRemoveIsCalled(PointListModel pointList)
         {
             _pointListRepository.Setup(x => x.Get(pointList.Id)).ReturnsAsync(pointList);
 
@@ -55,7 +55,7 @@ namespace SquareManagement.UnitTests.Services
         }
 
         [Test, AutoData]
-        public async Task Remove_GivenIncorrectId_ExceptionGetsThrown(PointList pointList)
+        public async Task Remove_GivenIncorrectId_ExceptionGetsThrown(PointListModel pointList)
         {
             Func<Task> act = async () => await _pointListService.Remove(pointList.Id);
 

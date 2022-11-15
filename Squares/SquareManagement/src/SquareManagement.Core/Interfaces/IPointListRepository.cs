@@ -4,9 +4,9 @@ namespace SquareManagement.Core.Interfaces
 {
     public interface IPointListRepository
     {
-        Task<int> Create(PointList pointList);
+        Task<int> Create(PointListModel pointList);
         Task Remove(int id);
 
-        Task<PointList> Get(int id);
+        Task<PointListModel> Get(int id);
     }
 }

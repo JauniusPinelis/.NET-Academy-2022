@@ -8,7 +8,8 @@ namespace SquareManagement.Services.MappingProfiles
     {
         public MainMappingProfile()
         {
-            CreateMap<CreatePointList, PointList>();
+            CreateMap<CreatePointList, PointListModel>();
+            CreateMap<PointListModel, PointList>();
         }
     }
 }

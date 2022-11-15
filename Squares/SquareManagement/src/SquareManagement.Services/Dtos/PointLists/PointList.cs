@@ -1,4 +1,4 @@
-﻿namespace SquareManagement.Core.Model
+﻿namespace SquareManagement.Services.Dtos.PointLists
 {
     public class PointList
     {

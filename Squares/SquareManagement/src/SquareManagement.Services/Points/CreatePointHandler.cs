@@ -17,7 +17,7 @@ namespace SquareManagement.Services.Points
 
         public async Task<PointCreated> Handle(CreatePointCommand request, CancellationToken cancellationToken)
         {
-            var pointList = _pointListService.Get(request.PointListId);
+            var pointList = await _pointListService.Get(request.PointListId);
 
             if (pointList == null)
             {

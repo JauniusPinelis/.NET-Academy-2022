@@ -14,17 +14,17 @@ namespace SquareManagement.Repositories.Repositories
             _connection = connection;
         }
 
-        public async Task<PointList> Get(int id)
+        public async Task<PointListModel> Get(int id)
         {
             string selectQuery = @"select * from public.pointlists where Id = @Id";
 
-            return await _connection.QueryFirstAsync<PointList>(selectQuery, new
+            return await _connection.QueryFirstAsync<PointListModel>(selectQuery, new
             {
                 id
             });
         }
 
-        public async Task<int> Create(PointList pointList)
+        public async Task<int> Create(PointListModel pointList)
         {
             string insertQuery = SqlConstants.InsertPointListCommand;
 

@@ -19,7 +19,7 @@ namespace SquareManagement.Services.Services
 
         public async Task<PointListCreated> Create(CreatePointList createPointList)
         {
-            var entity = _mapper.Map<PointList>(createPointList);
+            var entity = _mapper.Map<PointListModel>(createPointList);
 
             var id = await _pointListRepository.Create(entity);
 
@@ -43,8 +43,8 @@ namespace SquareManagement.Services.Services
 
         public async Task<PointList> Get(int id)
         {
-            // To add from databse
-            return await Task.FromResult(new PointList());
+            var pointList = await _pointListRepository.Get(id);
+            return _mapper.Map<PointList>(pointList);
         }
     }
 }
