@@ -2,7 +2,7 @@
 using SquareManagement.Core.Exceptions;
 using SquareManagement.Core.Interfaces;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos;
+using SquareManagement.Services.Dtos.PointLists;
 
 namespace SquareManagement.Services.Services
 {
@@ -39,6 +39,12 @@ namespace SquareManagement.Services.Services
             }
 
             await _pointListRepository.Remove(id);
+        }
+
+        public async Task<PointList> Get(int id)
+        {
+            // To add from databse
+            return await Task.FromResult(new PointList());
         }
     }
 }

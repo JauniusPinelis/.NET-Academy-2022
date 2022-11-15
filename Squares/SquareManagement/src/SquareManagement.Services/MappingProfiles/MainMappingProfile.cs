@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos;
+using SquareManagement.Services.Dtos.PointLists;
 
 namespace SquareManagement.Services.MappingProfiles
 {

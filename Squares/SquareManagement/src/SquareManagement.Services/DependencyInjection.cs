@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SquareManagement.Repositories.Extensions;
 using SquareManagement.Services.MappingProfiles;
@@ -15,6 +16,8 @@ namespace SquareManagement.Services
 
             services.AddAutoMapper(typeof(MainMappingProfile));
             services.AddTransient<PointListService>();
+
+            services.AddMediatR(typeof(PointService));
         }
     }
 }

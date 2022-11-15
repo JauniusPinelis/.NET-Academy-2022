@@ -6,7 +6,7 @@ using NUnit.Framework;
 using SquareManagement.Core.Exceptions;
 using SquareManagement.Core.Interfaces;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos;
+using SquareManagement.Services.Dtos.PointLists;
 using SquareManagement.Services.MappingProfiles;
 using SquareManagement.Services.Services;
 using System;
