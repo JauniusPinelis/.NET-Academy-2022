@@ -4,7 +4,7 @@ using SquareManagement.Core.Models;
 
 namespace SquareManagement.Repositories.Repositories
 {
-    public class PointRepository
+    public class PointRepository : IPointRepository
     {
 
         private readonly NpgsqlConnection _connection;
@@ -17,9 +17,14 @@ namespace SquareManagement.Repositories.Repositories
         public async Task<int> Create(PointModel pointModel)
         {
             string insertQuery = @$"Insert into dbo.points (x, y, pointlist_id) 
-                                values ({pointModel.X}, {pointModel.Y},{pointModel.PointListId})";
+                                values (@X, @Y, @PointListId)";
 
-            var createdId = await _connection.ExecuteAsync(insertQuery);
+            var createdId = await _connection.ExecuteAsync(insertQuery, new
+            {
+                pointModel.X,
+                pointModel.Y,
+                pointModel.PointListId
+            });
 
             return createdId;
         }
