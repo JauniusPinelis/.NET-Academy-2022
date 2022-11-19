@@ -6,7 +6,6 @@ namespace SquareManagement.Repositories.Repositories
 {
     public class PointRepository : IPointRepository
     {
-
         private readonly NpgsqlConnection _connection;
 
         public PointRepository(NpgsqlConnection connection)

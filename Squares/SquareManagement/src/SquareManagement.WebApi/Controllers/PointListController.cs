@@ -14,9 +14,10 @@ public class PointListController : ControllerBase
     private readonly IMediator _mediator;
     private readonly PointListService _pointListService;
 
-    public PointListController(IMediator mediator)
+    public PointListController(IMediator mediator, PointListService pointListService)
     {
         _mediator = mediator;
+        _pointListService = pointListService;
     }
 
     [HttpPost]
