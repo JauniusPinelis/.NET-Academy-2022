@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SquareManagement.Services.Dtos.PointLists;
 using SquareManagement.Services.Dtos.Points;
@@ -21,6 +22,7 @@ public class PointListController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = "Admin")]
     public async Task<IActionResult> Create(CreatePointList createPointList)
     {
         var pointListCreated = await _pointListService.Create(createPointList);

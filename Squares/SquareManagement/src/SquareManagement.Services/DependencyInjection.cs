@@ -16,6 +16,7 @@ namespace SquareManagement.Services
 
             services.AddAutoMapper(typeof(MainMappingProfile));
             services.AddTransient<PointListService>();
+            services.AddTransient<PointService>();
 
             services.AddMediatR(typeof(PointService));
         }

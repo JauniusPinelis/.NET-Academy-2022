@@ -1,0 +1,21 @@
+1. Homework is to show what you learnt, can do.
+
+What do we grade on:
+1. Functionality
+2. Solution architecture, exception-handling with custom exceptions, validation, no logic in infrastructure, repositories,
+Everything has the right place.
+3. Unit tests
+Mocking, interfaces, aaa, reusing code, InlineData.
+4. Naming, consistency, clean code, (Do I understand the code quickly)
+5. Nuget: Autofixture (maybe too complex), Dapper, AutoMapper, Moq, FluentValidation (suprise me)
+6. Nice Extras: Docker-compose, integration-tests, CI (build restore test)
+7. REST API design: 
+    standard endpoints/routes;
+    identify resources;
+    Meaningfull status codes 200, 204, 201, 400 (with error message), 404, 500
+    Documentation, Swagger
+    idempotency;
+8. DB: LiquidBase, good dapper usage, DB Schema:
+Mapping one to many, mapping many to many, foreign keys, primary keys, constrains, naming schema, seeding data,
+indexes.
+9. Readme.md

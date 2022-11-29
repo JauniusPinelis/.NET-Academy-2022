@@ -1,7 +1,18 @@
 using KubernetesTestApi;
 using Prometheus;
+using Serilog;
+using Serilog.Sinks.Loki;
+
+var credentials = new NoAuthCredentials("http://localhost:3100");
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.LokiHttp(credentials)
+    .CreateBootstrapLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -31,5 +42,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapMetrics();
+app.UseMetricServer();
 
 app.Run();

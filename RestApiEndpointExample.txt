@@ -1,0 +1,15 @@
+/Orders
+[Post] /Orders {body {itemId} } -> Creates an order and returns OrderId,
+[POST] /Orders/{id}/payment  {body {} } -> Creates an payment for order and returns,
+[POST] /Orders/{id}/deliver  {body {} } -> Creates an payment for order and returns,
+
+<!-- [PUT] /Orders/{id}/status  {body {} } -> Creates an payment for order and returns, -->
+
+/Items
+[Post] /Items {body} -> Creates an item and returns ItemId,
+
+/Buyers
+[GET] /buyers/{id}/orders -> Gets all single buyer orders.
+
+/Sellers
+[GET] /sellers/{id}/orders -> Gets all single seller orders.
