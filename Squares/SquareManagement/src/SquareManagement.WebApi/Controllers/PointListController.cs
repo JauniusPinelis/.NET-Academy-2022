@@ -1,10 +1,9 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using SquareManagement.Services.Dtos.PointLists;
-using SquareManagement.Services.Dtos.Points;
-using SquareManagement.Services.Points;
+using SquareManagement.Core.Model;
 using SquareManagement.Services.Services;
+using SquareManagement.WebApi.Dtos.PointLists;
 
 namespace SquareManagement.WebApi.Controllers;
 
@@ -12,22 +11,33 @@ namespace SquareManagement.WebApi.Controllers;
 [Route("pointlists")]
 public class PointListController : ControllerBase
 {
-    private readonly IMediator _mediator;
     private readonly PointListService _pointListService;
+    private readonly IMapper _mapper;
+    private readonly IValidator<CreatePointList> _pointListValidator;
 
-    public PointListController(IMediator mediator, PointListService pointListService)
+    public PointListController(PointListService pointListService, IMapper mapper, IValidator<CreatePointList> validator)
     {
-        _mediator = mediator;
         _pointListService = pointListService;
+        _mapper = mapper;
+        _pointListValidator = validator;
     }
 
     [HttpPost]
-    [Authorize(Policy = "Admin")]
-    public async Task<IActionResult> Create(CreatePointList createPointList)
+    public async Task<IActionResult> Create([FromBody] CreatePointList createPointList)
     {
-        var pointListCreated = await _pointListService.Create(createPointList);
 
-        return StatusCode(201, pointListCreated);
+        var entity = _mapper.Map<PointListModel>(createPointList);
+        var pointListCreated = await _pointListService.Create(entity);
+
+        //return property
+        return CreatedAtAction(nameof(Get), new { id = pointListCreated.Id }, pointListCreated);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(int id)
+    {
+        var pointListEntity = await _pointListService.Get(id);
+        return Ok(_mapper.Map<PointList>(pointListEntity));
     }
 
     [HttpDelete("{id}")]
@@ -38,15 +48,12 @@ public class PointListController : ControllerBase
         return NoContent();
     }
 
-    [HttpPost("{pointlist}/point")]
-    public async Task<IActionResult> CreatePoint(int pointListId, CreatePoint createPoint)
-    {
-        var pointCreated = await _mediator.Send(new CreatePointCommand
-        {
-            PointListId = pointListId,
-            CreatePoint = createPoint
-        });
+    //[HttpPost("{pointlist}/point")]
+    //public async Task<IActionResult> CreatePoint(int pointListId, CreatePoint createPoint)
+    //{
 
-        return StatusCode(201, pointCreated);
-    }
+
+    //    // return properly
+    //    return StatusCode(201, pointCreated);
+    //}
 }

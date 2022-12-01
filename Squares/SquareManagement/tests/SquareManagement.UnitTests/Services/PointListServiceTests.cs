@@ -1,13 +1,10 @@
 ﻿using AutoFixture.NUnit3;
-using AutoMapper;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using SquareManagement.Core.Exceptions;
 using SquareManagement.Core.Interfaces;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos.PointLists;
-using SquareManagement.Services.MappingProfiles;
 using SquareManagement.Services.Services;
 using System;
 using System.Threading.Tasks;
@@ -21,21 +18,19 @@ namespace SquareManagement.UnitTests.Services
 
         private Mock<IPointListRepository> _pointListRepository = null!;
 
-        private IMapper _mapper = null!;
 
         [SetUp]
         public void Setup()
         {
             _pointListRepository = new Mock<IPointListRepository>();
 
-            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(typeof(MainMappingProfile)));
-            _mapper = new Mapper(configuration);
 
-            _pointListService = new PointListService(_pointListRepository.Object, _mapper);
+
+            _pointListService = new PointListService(_pointListRepository.Object);
         }
 
         [Test, AutoData]
-        public async Task Create_GivenValidCreate_RepositoryCreateIsCalled(CreatePointList createPointList)
+        public async Task Create_GivenValidCreate_RepositoryCreateIsCalled(PointListModel createPointList)
         {
             var created = await _pointListService.Create(createPointList);
 

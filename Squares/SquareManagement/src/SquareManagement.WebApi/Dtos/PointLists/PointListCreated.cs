@@ -1,4 +1,4 @@
-﻿namespace SquareManagement.Services.Dtos.PointLists;
+﻿namespace SquareManagement.WebApi.Dtos.PointLists;
 
 public class PointListCreated
 {

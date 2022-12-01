@@ -4,9 +4,9 @@ using Npgsql;
 using SquareManagement.Core.Interfaces;
 using SquareManagement.Repositories.Repositories;
 
-namespace SquareManagement.Repositories.Extensions
+namespace SquareManagement.Repositories
 {
-    public static class RepositoriesExtensions
+    public static class DependencyInjection
     {
         public static void AddRepositories(this IServiceCollection services, IConfiguration configuration)
         {

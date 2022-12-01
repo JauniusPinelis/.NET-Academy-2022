@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\SquareManagement.Services\SquareManagement.Services.csproj" />
+    <ProjectReference Include="..\..\src\SquareManagement.WebApi\SquareManagement.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

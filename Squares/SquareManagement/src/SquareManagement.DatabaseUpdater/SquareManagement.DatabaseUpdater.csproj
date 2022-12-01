@@ -8,15 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scripts\Script0001.sql" />
-    <None Remove="Scripts\Script0002.sql" />
+    <None Remove="Scripts\Script0001-AddPoints.sql" />
+    <None Remove="Scripts\Script0002-AddPointLists.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\Script0002.sql">
+    <EmbeddedResource Include="Scripts\Script0002-AddPointLists.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Scripts\Script0001.sql">
+    <EmbeddedResource Include="Scripts\Script0001-AddPoints.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

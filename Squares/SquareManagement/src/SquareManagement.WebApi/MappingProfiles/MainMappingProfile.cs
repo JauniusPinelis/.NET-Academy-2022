@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos.PointLists;
+using SquareManagement.WebApi.Dtos.PointLists;
 
-namespace SquareManagement.Services.MappingProfiles
+namespace SquareManagement.WebApi.MappingProfiles
 {
     public class MainMappingProfile : Profile
     {

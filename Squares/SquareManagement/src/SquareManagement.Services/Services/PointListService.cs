@@ -1,29 +1,23 @@
-﻿using AutoMapper;
-using SquareManagement.Core.Exceptions;
+﻿using SquareManagement.Core.Exceptions;
 using SquareManagement.Core.Interfaces;
 using SquareManagement.Core.Model;
-using SquareManagement.Services.Dtos.PointLists;
 
 namespace SquareManagement.Services.Services
 {
     public class PointListService
     {
         private readonly IPointListRepository _pointListRepository;
-        private readonly IMapper _mapper;
 
-        public PointListService(IPointListRepository pointListRepository, IMapper mapper)
+        public PointListService(IPointListRepository pointListRepository)
         {
             _pointListRepository = pointListRepository;
-            _mapper = mapper;
         }
 
-        public async Task<PointListCreated> Create(CreatePointList createPointList)
+        public async Task<PointListModel> Create(PointListModel createPointList)
         {
-            var entity = _mapper.Map<PointListModel>(createPointList);
+            var id = await _pointListRepository.Create(createPointList);
 
-            var id = await _pointListRepository.Create(entity);
-
-            return new PointListCreated
+            return new PointListModel
             {
                 Id = id,
             };
@@ -41,10 +35,9 @@ namespace SquareManagement.Services.Services
             await _pointListRepository.Remove(id);
         }
 
-        public async Task<PointList> Get(int id)
+        public async Task<PointListModel> Get(int id)
         {
-            var pointList = await _pointListRepository.Get(id);
-            return _mapper.Map<PointList>(pointList);
+            return await _pointListRepository.Get(id);
         }
     }
 }
