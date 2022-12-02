@@ -225,3 +225,5 @@ https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
 
 1. Refactoring
 2. File upload
+
+https://stackoverflow.com/questions/58821308/asp-net-core-exception-handling-middleware
