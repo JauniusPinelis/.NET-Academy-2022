@@ -2,6 +2,6 @@
 {
     public static class SqlConstants
     {
-        public const string InsertPointListCommand = @"INSERT INTO public.pointlists(name) VALUES(@Name)";
+        public const string InsertPointListCommand = @"INSERT INTO public.point_lists(name) VALUES(@Name)";
     }
 }

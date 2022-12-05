@@ -16,7 +16,7 @@ namespace SquareManagement.Repositories.Repositories
 
         public async Task<PointListModel> Get(int id)
         {
-            string selectQuery = @"select * from public.pointlists where Id = @Id";
+            string selectQuery = @"select * from public.point_lists where Id = @Id";
 
             return await _connection.QueryFirstAsync<PointListModel>(selectQuery, new
             {
@@ -38,7 +38,7 @@ namespace SquareManagement.Repositories.Repositories
 
         public async Task Remove(int id)
         {
-            string removeQuery = @"remove from public.pointlists where Id = @Id";
+            string removeQuery = @"remove from public.point_lists where Id = @Id";
 
             await _connection.ExecuteAsync(removeQuery, new
             {

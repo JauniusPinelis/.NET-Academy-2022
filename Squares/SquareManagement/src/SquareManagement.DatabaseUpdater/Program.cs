@@ -3,7 +3,7 @@ using System.Reflection;
 
 var connectionString =
         args.FirstOrDefault()
-        ?? "Server=localhost;Database=squares-db;User Id=superuser;Password=testing123";
+        ?? "host=localhost; port=1234;Database=blogdb;User Id=bloguser;Password=bloguser";
 
 EnsureDatabase.For.PostgresqlDatabase(connectionString);
 

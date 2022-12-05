@@ -5,5 +5,5 @@
 	PRIMARY KEY(x, y, pointlist_id),
 	CONSTRAINT fk_pointlist_id
       FOREIGN KEY(pointlist_id) 
-	  REFERENCES pointlists(id)
+	  REFERENCES point_lists(id)
 );
